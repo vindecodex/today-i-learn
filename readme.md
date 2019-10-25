@@ -7,4 +7,4 @@
 
 
 ###### Tools
-1. (htmltidy)[https://htmltidy.net/] - for formatting the html codes to markdown
+1. [htmltidy](https://htmltidy.net/) - for formatting the html codes to markdown
