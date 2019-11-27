@@ -19,4 +19,10 @@ examples of Async fn are:
 
 What is a callback - it is a function that pass as an argument.
 
+##### 3 status for Promise
 
+Async Functions take some time before it returns a value, depends upon the data size that is being processed.
+
+- Pending - holds undefined value
+- Fulfilled - holds exact value
+- Rejected - holds the error value
