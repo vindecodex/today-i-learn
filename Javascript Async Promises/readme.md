@@ -41,7 +41,8 @@ const thePromise = new Promise(function(resolve,reject){
 console.log(thePromise)
 ```
 
-output
+output:
+
 ![image](https://user-images.githubusercontent.com/50949760/69840426-71b05f80-1296-11ea-974c-9fcba37c09f5.png)
 
 2. Resolved
@@ -54,5 +55,7 @@ const thePromise = new Promise(function(resolve,reject){
 console.log(thePromise)
 ```
 
-output
+output:
+
+![image](https://user-images.githubusercontent.com/50949760/69840535-eaafb700-1296-11ea-8211-e972bdb4bbb6.png)
 
