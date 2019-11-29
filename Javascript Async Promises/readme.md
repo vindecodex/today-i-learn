@@ -72,3 +72,13 @@ console.log(thePromise)
 output:
 
 ![image](https://user-images.githubusercontent.com/50949760/69840705-6b6eb300-1297-11ea-8ac4-97dd0043137a.png)
+
+Catching the error when rejecting
+
+```JavaScript
+const thePromise = new Promise(function(resolve,reject){
+	reject("reject")
+}).catch(err => console.log(err))
+```
+
+It will output whatever the value of your reject
