@@ -32,9 +32,24 @@ Async Functions take some time before it returns a value, depends upon the data 
 To create a promise we are going to instantiate a new class which is `Promise` class. And Promise has a parameter which is a function that is called as executor and this is required.
 This executor function has also two parameters which is `resolve` and `reject` and both of these are functions.
 
+1. Pending
+
 ```JavaScript
 const thePromise = new Promise(function(resolve,reject){
 	
+})
+console.log(thePromise)
+```
+
+output
+![image](https://user-images.githubusercontent.com/50949760/69840426-71b05f80-1296-11ea-974c-9fcba37c09f5.png)
+
+2. Resolved
+
+```JavaScript
+const thePromise = new Promise(function(resolve,reject){
+  // resolve accepts one argument which will be the value
+	resolve("resolve")
 })
 console.log(thePromise)
 ```
