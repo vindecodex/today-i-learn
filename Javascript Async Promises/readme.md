@@ -59,3 +59,16 @@ output:
 
 ![image](https://user-images.githubusercontent.com/50949760/69840535-eaafb700-1296-11ea-8211-e972bdb4bbb6.png)
 
+3. Rejected
+
+```JavaScript
+const thePromise = new Promise(function(resolve,reject){
+  // reject accepts one argument which will be the value of error or reason why it was rejected
+	reject("reject")
+})
+console.log(thePromise)
+```
+
+output:
+
+![image](https://user-images.githubusercontent.com/50949760/69840705-6b6eb300-1297-11ea-8ac4-97dd0043137a.png)
