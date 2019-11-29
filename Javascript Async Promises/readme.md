@@ -26,3 +26,18 @@ Async Functions take some time before it returns a value, depends upon the data 
 - Pending - holds undefined value
 - Fulfilled - holds exact value
 - Rejected - holds the error value
+
+##### Creating a Promise
+
+To create a promise we are going to instantiate a new class which is `Promise` class. And Promise has a parameter which is a function that is called as executor and this is required.
+This executor function has also two parameters which is `resolve` and `reject` and both of these are functions.
+
+```JavaScript
+const thePromise = new Promise(function(resolve,reject){
+	
+})
+console.log(thePromise)
+```
+
+output
+
