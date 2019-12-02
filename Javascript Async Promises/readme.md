@@ -127,7 +127,7 @@ sum(2,5)
 // output should be 7;
 ```
 
-from `then` we can also call another promises.
+from `then` we can also call another promises. By returning an async fn, same thing on what we did from below.
 
 ```JavaScript
 sum(2,5)
