@@ -188,6 +188,8 @@ const promise3 = new Promise(function(resolve,reject) {
 Promise.all([promise1,promise2,promise3]);
 ```
 
+> Using above method is already executed upon declaring the `const promise#`
+
 Or
 
 ```JavaScript
@@ -209,10 +211,15 @@ function promise3() {
 Promise.all([promise1(),promise2(),promise3()])
 ```
 
+> Using this method it will only be executed during the `Promise.all()` was called
+
 Getting the value
 
 ```JavaScript
 
+Promise.all([promise1,promise2,promise3]).then(result => { console.log(result) })
 Promise.all([promise1(),promise2(),promise3()]).then(result => { console.log(result) })
 
 ```
+
+> You can see the differences if you test this line of code.
