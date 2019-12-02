@@ -150,3 +150,17 @@ sum(2,5)
 ```
 
 `.then` is a chain what may be the return of the promise or the then before it will be the next argument of your then.
+
+#### Creating a Fn that accepts promise 
+
+```JavaScript
+function iAcceptPromise(anyPromise) {
+  anyPromise.then(result => console.log(result));
+}
+
+const myPromise = new Promise(function(resolve, reject){
+        resolve("Hello");
+    });
+
+iAcceptPromise(myPromise);
+```
