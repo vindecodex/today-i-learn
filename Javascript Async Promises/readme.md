@@ -137,3 +137,5 @@ sum(2,5)
 })
 .then(anotherTotal => { console.log(anotherTotal) })
 ```
+
+`.then` is a chain what may be the return of the promise or the then before it will be the next argument of your then.
