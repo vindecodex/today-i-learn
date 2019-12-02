@@ -164,3 +164,11 @@ const myPromise = new Promise(function(resolve, reject){
 
 iAcceptPromise(myPromise);
 ```
+
+Passing a value that is not a promise to a fn that only accepts promise
+
+```JavaScript
+const val = "Hello World";
+const convertedToPromise = Promise.resolve(val)  // Same thing with reject use Promise.reject(new Error("Erro"));
+iAcceptPromise(convertedToPromise);
+```
