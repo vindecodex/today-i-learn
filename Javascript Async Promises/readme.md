@@ -172,3 +172,39 @@ const val = "Hello World";
 const convertedToPromise = Promise.resolve(val)  // Same thing with reject use Promise.reject(new Error("Erro"));
 iAcceptPromise(convertedToPromise);
 ```
+
+#### Parallel Promise
+
+```JavaScript
+const promise1 = new Promise(function(resolve,reject) {
+    setTimeout(function(){ resolve("ONE"); }, 3000);
+})
+const promise2 = new Promise(function(resolve,reject) {
+    setTimeout(function(){ resolve("TWO"); }, 5000);
+})
+const promise3 = new Promise(function(resolve,reject) {
+    setTimeout(function(){ resolve("THREE"); }, 1000);
+})
+Promise.all([promise1,promise2,promise3]);
+```
+
+Or
+
+```JavaScript
+function promise1() {
+    return new Promise(function(resolve,reject) {
+        setTimeout(function() { resolve("ONE") }, 4000)
+    })
+}
+function promise2() {
+    return new Promise(function(resolve,reject) {
+        setTimeout(function() { resolve("TWO") }, 7000)
+    })
+}
+function promise3() {
+    return new Promise(function(resolve,reject) {
+        setTimeout(function() { resolve("THREE") }, 9000)
+    })
+}
+Promise.all([promise1(),promise2(),promise3()])
+```
