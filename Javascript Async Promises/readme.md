@@ -132,7 +132,8 @@ from `then` we can also call another promises.
 ```JavaScript
 sum(2,5)
 .then(total => {
-  return sum(total,total)
+   sum(5,5)
+    .then(result => result)
 })
 .then(anotherTotal => { console.log(anotherTotal) })
 ```
