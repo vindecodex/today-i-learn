@@ -30,7 +30,7 @@ Async Functions take some time before it returns a value, depends upon the data 
 ##### Creating a Promise
 
 To create a promise we are going to instantiate a new class which is `Promise` class. And Promise has a parameter which is a function that is called as executor and this is required.
-This executor function has also two parameters which is `resolve` and `reject` and both of these are functions.
+This executor function has also two parameters which is `resolve` and `reject` and both of these are functions as well.
 
 1. Pending
 
@@ -73,7 +73,30 @@ output:
 
 ![image](https://user-images.githubusercontent.com/50949760/69840705-6b6eb300-1297-11ea-8ac4-97dd0043137a.png)
 
-Catching the error when rejecting
+##### Getting the value of a promise either rejected or resolved
+
+###### Getting the output when resolved
+
+We can access promise value by using the `then`. `then` accepts two arguments which is a function the `onfulfilled` and `onrejected`
+
+```JavaScript
+const thePromise = new Promise(function(resolve, reject){
+    resolve("myvalue");
+    })
+
+thePromise.then(function(value){ return value })
+
+// or
+
+thePromise.then(value => return value)
+
+// We can add comma and add another function for the onrejected part example below
+
+thePromise.then(resolveVal => console.log(resolveVal), rejectVal => console.log(rejectVal))
+
+```
+
+###### Catching the error when rejecting
 
 ```JavaScript
 const thePromise = new Promise(function(resolve,reject){
