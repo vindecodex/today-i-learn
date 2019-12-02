@@ -119,6 +119,7 @@ function sum(n1, n2) {
           resolve("Sum of two numbers: " + result)
           }, 3000);
       });
+  return promise;
 }
 
 sum(2,5)
