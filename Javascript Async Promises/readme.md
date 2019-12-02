@@ -126,3 +126,13 @@ sum(2,5)
 .then(total => {console.log(total)});
 // output should be 7;
 ```
+
+from `then` we can also call another promises.
+
+```JavaScript
+sum(2,5)
+.then(total => {
+  return sum(total,total)
+})
+.then(anotherTotal => { console.log(anotherTotal) })
+```
