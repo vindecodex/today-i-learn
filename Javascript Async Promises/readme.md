@@ -19,7 +19,7 @@ examples of Async fn are:
 
 What is a callback - it is a function that pass as an argument.
 
-##### 3 status for Promise
+#### 3 status for Promise
 
 Async Functions take some time before it returns a value, depends upon the data size that is being processed.
 
@@ -27,7 +27,7 @@ Async Functions take some time before it returns a value, depends upon the data 
 - Fulfilled - holds exact value
 - Rejected - holds the error value
 
-##### Creating a Promise
+#### Creating a Promise
 
 To create a promise we are going to instantiate a new class which is `Promise` class. And Promise has a parameter which is a function that is called as executor and this is required.
 This executor function has also two parameters which is `resolve` and `reject` and both of these are functions as well.
@@ -73,9 +73,9 @@ output:
 
 ![image](https://user-images.githubusercontent.com/50949760/69840705-6b6eb300-1297-11ea-8ac4-97dd0043137a.png)
 
-##### Getting the value of a promise either rejected or resolved
+#### Getting the value of a promise either rejected or resolved
 
-###### Getting the output when resolved
+##### Getting the output when resolved
 
 We can access promise value by using the `then`. `then` accepts two arguments which is a function the `onfulfilled` and `onrejected`
 
@@ -96,7 +96,7 @@ thePromise.then(resolveVal => console.log(resolveVal), rejectVal => console.log(
 
 ```
 
-###### Catching the error when rejecting
+##### Catching the error when rejecting
 
 ```JavaScript
 const thePromise = new Promise(function(resolve,reject){
@@ -105,3 +105,23 @@ const thePromise = new Promise(function(resolve,reject){
 ```
 
 It will output whatever the value of your reject
+
+#### Using Promise on custom function
+
+```JavaScript
+function sum(n1, n2) {
+  const promise = new Promise(function(resolve, reject){
+      setTimeout(function(){
+          if (typeof n1 != "number" || typeof n2 != "number") {
+              return reject("Required input type of number");
+          }
+          const result= n1 + n2;
+          resolve("Sum of two numbers: " + result)
+          }, 3000);
+      });
+}
+
+sum(2,5)
+.then(total => {console.log(total)});
+// output should be 7;
+```
