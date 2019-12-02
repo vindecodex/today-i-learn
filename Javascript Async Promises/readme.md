@@ -208,3 +208,11 @@ function promise3() {
 }
 Promise.all([promise1(),promise2(),promise3()])
 ```
+
+Getting the value
+
+```JavaScript
+
+Promise.all([promise1(),promise2(),promise3()]).then(result => { console.log(result) })
+
+```
