@@ -98,6 +98,17 @@ thePromise.then(resolveVal => console.log(resolveVal), rejectVal => console.log(
 
 ##### Catching the error when rejecting
 
+Method 1 (using then at the last part argument must be undefined)
+
+```JavaScript
+const thePromise = new Promise(function(resolve,reject){
+	reject("reject")
+})
+.then(undefined, err => { console.log(err) })
+```
+
+Method 2 (using the catch which is recommended)
+
 ```JavaScript
 const thePromise = new Promise(function(resolve,reject){
 	reject("reject")
