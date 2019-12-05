@@ -258,3 +258,31 @@ Promise.all([
 ```
 
 Promise.all is now rarely used on production.
+
+#### Get the fastest result (Promise.race)
+
+```JavaScript
+function racer1() {
+  return new Promise(function(resolve, reject) {
+      setTimeout(function(){
+              resolve("racer 1 win");
+          },1500)
+      })
+}
+function racer2() {
+  return new Promise(function(resolve, reject) {
+      setTimeout(function(){
+              resolve("racer 2 win");
+          }, 2000)
+      })
+}
+function racer3() {
+  return new Promise(function(resolve, reject) {
+      setTimeout(function(){
+              resolve("racer 3 win");
+          }, 1000)
+      })
+}
+
+Promise.race([racer1(),racer2(),racer3()]).then(winner => { console.log(winner) })
+```
