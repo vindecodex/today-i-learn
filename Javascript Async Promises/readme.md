@@ -173,7 +173,7 @@ const convertedToPromise = Promise.resolve(val)  // Same thing with reject use P
 iAcceptPromise(convertedToPromise);
 ```
 
-#### Parallel Promise
+#### Parallel Promise with (Promise.all)
 
 ```JavaScript
 const promise1 = new Promise(function(resolve,reject) {
@@ -216,10 +216,42 @@ Promise.all([promise1(),promise2(),promise3()])
 Getting the value
 
 ```JavaScript
-
+//if using function expression
 Promise.all([promise1,promise2,promise3]).then(result => { console.log(result) })
+//if using function declaration
 Promise.all([promise1(),promise2(),promise3()]).then(result => { console.log(result) })
-
 ```
 
 > You can see the differences if you test this line of code.
+
+#### Handling Rejection with (Promise.all)
+
+> Bad
+
+```JavaScript
+//if using function expression
+Promise.all([promise1,promise2,promise3]).then(result => { console.log(result) })
+//if using function declaration
+Promise.all([promise1(),promise2(),promise3()]).then(result => { console.log(result) })
+```
+
+> If we add reject on any of the promises it won't show other promises results but instead the value of reject will be displayed.
+> If you want to still display all the result even one of the promise rejected.
+
+> Good
+> Using code below is good practice
+
+```JavaScript
+//if using function expression
+Promise.all([
+  promise1,
+  promise2,
+  promise3
+]).then(result => { console.log(result) })
+//if using function declaration
+Promise.all([
+  promise1().catch(err => { console.log(err) }),
+  promise2().catch(err => { console.log(err) }),
+  promise3().catch(err => { console.log(err) })
+]).then(result => { console.log(result) })
+```
