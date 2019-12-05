@@ -256,3 +256,5 @@ Promise.all([
   promise3().catch(err => { console.log(err) })
 ]).then(result => { console.log(result) })
 ```
+
+Promise.all is now rarely used on production.
