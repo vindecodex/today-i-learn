@@ -239,14 +239,15 @@ Promise.all([promise1(),promise2(),promise3()]).then(result => { console.log(res
 > If you want to still display all the result even one of the promise rejected.
 
 > Good
+
 > Using code below is good practice
 
 ```JavaScript
 //if using function expression
 Promise.all([
-  promise1,
-  promise2,
-  promise3
+  promise1.catch(err => { console.log(err) }),
+  promise2.catch(err => { console.log(err) }),
+  promise3.catch(err => { console.log(err) })
 ]).then(result => { console.log(result) })
 //if using function declaration
 Promise.all([
