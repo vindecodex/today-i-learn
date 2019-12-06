@@ -287,4 +287,4 @@ function racer3() {
 Promise.race([racer1(),racer2(),racer3()]).then(winner => { console.log(winner) })
 ```
 
-[Continue to Async](/blob/master/Javascript%20Async%20Promises/async.md)
+[Continue to Async](/Javascript%20Async%20Promises/async.md)
