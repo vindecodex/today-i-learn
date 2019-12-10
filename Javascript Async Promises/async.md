@@ -13,3 +13,13 @@ fn();
 >output
 
 ![image](https://user-images.githubusercontent.com/50949760/70291091-155cbb00-1815-11ea-8895-faafc474d57a.png)
+
+async with reject
+
+```JavaScript
+async function fn() {
+  return Promise.reject("sorry error")
+}
+
+fn().catch(err => console.log(err))
+```
