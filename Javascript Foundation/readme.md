@@ -173,7 +173,9 @@ var name = 'vindecode';
 ```
 
 <p><strong>Functions</strong> You can pass a function to a variable</p>
-<pre> var addNumbers = function(n1 ,n2) {
+
+```JavaScript
+ var addNumbers = function(n1 ,n2) {
  console.log(n1 + n2) ;
  }
  addNumbers(5,10);
@@ -193,7 +195,8 @@ var name = 'vindecode';
  x(10,10);
  output:
  20
- </pre>
+```
+
 </div>
 <div>
 <div>April 12, 2019
