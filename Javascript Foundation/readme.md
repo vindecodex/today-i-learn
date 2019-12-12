@@ -356,11 +356,14 @@ var name = 'vindecode';
 <p><strong>Javascript</strong> is a <strong>Single Threaded</strong> which means javascript runs a task once at a time</p>
 <p>So dont think <strong>Javascript is shit!.</strong>. Let me explain something more about <strong>Javascript</strong>.</p>
 <p>But first I want to prove it first that <strong>javascript</strong> is a single threaded language by doing this:</p>
-<pre>// create html document with only just a button with a height of 200vh unit
+
+```JavaScript
+ // create html document with only just a button with a height of 200vh unit
  // and add a javascript below with alert('any text'); or just run a javascript on a console of that page with alert
  //try to run but dont even try to press ok on alert and try to click the button on your html or try to scroll down.
  // you'll see that button couldnt be clicked nor scroll because as what i said javascript cant run multiple task unless the first task is done then before going to other task.
- </pre>
+```
+
 <p>So dont think <strong>javascript</strong> is shit!...because there is a <strong>Javascript Runtime</strong> which the browser's offer to us</p>
 <p>Javascript is synchronous becuase it runs one at a time.</p>
 <br /><br /><br />
@@ -380,14 +383,17 @@ var name = 'vindecode';
 <p>If javascript found a function <strong>setTimeOut()</strong> javascript will pass it to the WEB API to process it and javascript continue to run what is really for him. when javascript finished running all the task, WEB API will tell to javascript engine if they can now pass the result that which he did.</p>
 <p>Other explanation, javascript will check all the codes and if their is a WEB API then it will passed to WEB API and WEB API will process it, even though WEB API finished processing it, it will still wait to the javascript if it was finished all of its task before javascript reads the WEB API task.</p>
 <p>Common Interview about javascript is that they will ask you a question with a code something like this</p>
-<pre> console.log('1');
+
+```JavaScript
+ console.log('1');
  setTimeout(() =&gt; {console.log('2'),1000}); //this is a WEB API
  console.log('3');
  output:
  1
  3
  2
- </pre>
+```
+
 <p>As you can see javascript runs first everything before it runs the WEB API</p>
 <p>Even though WEB API finished first it will wait to the <strong>Stack Que</strong> and <strong>Event loop</strong> will be the one to ask to the javascript engine if javascript is already done running and pass the what ever on the Stack Que.</p>
 <p><strong>Node.js</strong> vs <strong>Javascript Runtime</strong> both of them are runtime but only difference is that node.js can run without a browser, while Javascript Runtime cant run without a browser</p>
@@ -412,7 +418,9 @@ var name = 'vindecode';
 <p>Remember that the very first thing inside a <strong>Call Stack</strong> is the <strong>Global Execution Context</strong></p>
 <br /><br /><br />
 <p><strong>Lexical Environment</strong> is about where does the function was executed.</p>
-<pre>// Example
+
+```JavaScript
+ // Example
  function a(){ // this is lexical to global execution context
  return 'planet A';
  }
@@ -422,7 +430,8 @@ var name = 'vindecode';
  }
  }
  // did you get what i mean ? lexical is about where the code was executed.
- </pre>
+```
+
 <p>Remember that Lexical is about where to code was written, while scope is who can access the variable</p>
 <p>Once the javascript runs it creates an execution context which is the global execution context</p>
 <p>Everytime we run a function it creates an execution context which will be added to our call stack, and the call stack will help us find the lexical of each codes.</p>
@@ -432,7 +441,9 @@ var name = 'vindecode';
 <p>Remember when I say environment it is the execution context/function</p>
 <p><strong>Hoisting</strong>is assigning all the variables or functions to undefined during Creation Phase reason for this is to allocate memory to the CPU before it runs the program</p>
 <p>It checks all the variables and functions that you have on your code and assigned it to undefined</p>
-<pre> console.log(a);
+
+```JavaScript
+ console.log(a);
  var a = 'abc';
  function b(){
  return 'ddd';
@@ -450,7 +461,8 @@ var name = 'vindecode';
  }
  output:
  undefined //this undefined is the value of a
- </pre>
+```
+
 <br /><br /><br />
 <p>Remember this every execution context, hoisting will always happen inside the environment/function/execution context</p>
 <p>To avoid hoisting use <strong>const and let</strong></p>
@@ -458,7 +470,9 @@ var name = 'vindecode';
 <p>Main thing about <strong>hoisting</strong> is that it allocates memory to the cpu before javascript runs to make javascript ready.</p>
 <br /><br /><br />
 <p>Another idea found</p>
-<pre>// this is a function expression
+
+```JavaScript
+// this is a function expression
  var a = function(){
  return 'abc';
  }
@@ -471,14 +485,18 @@ var name = 'vindecode';
  return 'abc';
  }
  // when you call a function its name is Invocation/Call/Execution
- </pre>
-<pre>// other ways to return a value
+```
+
+```JavaScript
+ // other ways to return a value
  function person(person1, person2){
  return `${person1} : ${person2}`;
  }
- </pre>
+```
+
 <p>At the Global Execution Context we have the global and this objects while on the execution context/ function we created, during the creation phase there are two objects will be created which will be the <strong>this and arguments</strong></p>
-<pre> function person(person1, person2){
+```JavaScript
+ function person(person1, person2){
  console.log(arguments);
  }
  output:
@@ -498,8 +516,10 @@ var name = 'vindecode';
  Array [value 1, value2]
  He is value1 and He is value2
  // remember that when using a return with this ${} technique use this ` because it will not work on simple qoute
- </pre>
-<pre>// Experiment about the spread operators
+```
+
+```JavaScript
+ // Experiment about the spread operators
  function alphabet(...letters){
  var l = Array.from(letters);
  var n = l.length;
@@ -536,17 +556,23 @@ var name = 'vindecode';
  This is letter : x
  This is letter : y
  This is letter : z
- </pre>
+```
+
 <p>A function without a paramater will still have an arguments but it will be empty object</p>
-<pre> function person(){
+
+```JavaScript
+ function person(){
  console.log(arguments);
  }
  output:
  {}
- </pre>
+```
+
 <p><strong>Variable Environment</strong> each execution context/function has its own variable environment</p>
 <p><strong>Scope Chain</strong> which you can access variables from parents</p>
-<pre> function a(){
+
+```JavaScript
+ function a(){
  var a = 'a'; a can access variable of the global execution context
  function b(){
  var b = 'b';  b can access variable of a
@@ -556,10 +582,13 @@ var name = 'vindecode';
  }
  }
  // this will be the chain global() -&gt; a() -&gt; b() -&gt; c()
- </pre>
+```
+
 <p>Another thing during the execution context we also have a <strong>lexical variables</strong> in which javascript will create a scope of each variable in which where will be the variables can be used/ or who can access variables</p>
 <p>Another idea here</p>
-<pre> function a() {
+
+```JavaScript
+ function a() {
  height = 50;
  return height;
  }
@@ -573,18 +602,24 @@ var name = 'vindecode';
  }
  output:
  error
- </pre>
+```
+
 <p><strong>Function Scope VS Block Scope</strong> Function scope creates variable on its enviroment and all child functions can access it. while Block Scope Every time there is a {} every variable that is inside of it cannot be access from the outside of the {}.</p>
 <p>Most of the programming language are Block Scope but javascript isn't</p>
-<pre> if( 5 &lt; 10){ //this is already a block scope but javascript can still able to console the var number
+
+```JavaScript
+ if( 5 &lt; 10){ //this is already a block scope but javascript can still able to console the var number
  var number = 100;
  }
  console.log(number)
  output:
  100;
- </pre>
+```
+
 <p>To allow javascript Block Scoping we can use let and const declarations</p>
-<pre> if(5 &lt; 10){
+
+```JavaScript
+ if(5 &lt; 10){
  const number = 100;
  }
  console.log(number);
@@ -596,17 +631,23 @@ var name = 'vindecode';
  console.log(number);
  output:
  error
- </pre>
+```
+
 <p>let and const are still in the memory but only the engine will keep not to use it if its already outside of the brackets</p>
 <br /><br /><br />
 <p>Remember the global variables are bad because it may cause memory leaks or variable colision or overides the value</p>
 <p>To minimize global variables issue we have this modern technique <strong>IIFE (Imediately Invoke Function Expression)</strong></p>
-<pre> (function(){ //we create a function expression not a declaration, then create anonymous<br /> function which has no name after the function we Invoke it directly by calling ()
+
+```JavaScript
+ (function(){ //we create a function expression not a declaration, then create anonymous<br /> function which has no name after the function we Invoke it directly by calling ()
  })();
- </pre>
+```
+
 <br /><br /><br />
 <p><strong>This</strong> the this keyword definition is "This is the object that the function is a property of"</p>
-<pre> var person = {
+
+```JavaScript
+ var person = {
  name : 'Vincent',
  talent : 'Sing',
  sing : function() {
@@ -621,7 +662,8 @@ var name = 'vindecode';
  return 'ohhh lalala ' + this.name // because we cannot access person.name <br /> we can try to call it by using this, this.name = person.name
  }
  }
- </pre>
+```
+
 </div>
 <div>
 <div>April 28, 2019
@@ -629,7 +671,9 @@ var name = 'vindecode';
 </div>
 <p><strong>The main pupose of <u>this</u></strong> is that it gives methods access to their object</p>
 <p>The second purpose will be it execute same code for multiple objects</p>
-<pre> var name = "vindecode" // default name and this is in the global execution context (we must use const here but its not working for this time i created this) <br />
+
+```JavaScript
+ var name = "vindecode" // default name and this is in the global execution context (we must use const here but its not working for this time i created this) <br />
  function winner() {
  return 'The winner is ' + this.name;
  }
@@ -645,12 +689,15 @@ var name = 'vindecode';
  obj1.winner(); // remember to run this 1 by 1
  obj2.winner();// remember to run this 1 by 1
  // by this example you will get more understanding on how this works
- </pre>
+```
+
 <p>As you can see, we created one function but multiple objects can use that function, hope that you get what I mean</p>
 <p>More idea, always think that <u>this</u> is a word "Who Called Me" because this is a placeholder depends on who called the this keyword.</p>
 <br /><br /><br />
 <p>Another idea here</p>
-<pre> const a = {
+
+```JavaScript
+ const a = {
  name : 'Vindecode',
  winner : function() {
  console.log('a' , this);
@@ -711,12 +758,15 @@ var name = 'vindecode';
  output:
  a Object { name : "Vindecode", winner : winner() }
  b Object { name : "Vindecode", winner : winner() }
- </pre>
+```
+
 <p>I know its hard for me to explain how really <u>this</u> works, but its better to play with it because experience is the best part of learning, you will just understand its nature by always using it.</p>
 <br /><br /><br />
 <p><strong>The call(), apply() and bind()</strong></p>
 <p>Call and Apply are just more likely similar but the only differences is that apply accepts array of parameter.</p>
-<pre> const wizard = {
+
+```JavaScript
+ const wizard = {
  name: 'Chen',
  health: 100,
  heal : function(){
@@ -754,10 +804,13 @@ var name = 'vindecode';
  archer
  output:
  Object { name: "Trax", health: 110 }
- </pre>
+```
+
 <p>Call and Apply are used for borrowing methods of an object</p>
 <p>While bind is useful to call a function for later on use, because we are storing a function of another object to another variable.</p>
-<pre> const wizard = {
+
+```JavaScript
+ const wizard = {
  name: 'Chen',
  health: 100,
  heal : function(num1, num2){
@@ -773,9 +826,12 @@ var name = 'vindecode';
  archer
  output:
  Object { name: "Trax", health: 70 }
- </pre>
+```
+
 <p>Another tricks for using bind</p>
-<pre> function multiply(a,b){
+
+```JavaScript
+ function multiply(a,b){
  return a*b;
  }
  // the goal here is to give a partial parameter to the multiply function
@@ -786,7 +842,8 @@ var name = 'vindecode';
  output:
  8
  50
- </pre>
+```
+
 <p>Context vs Scope</p>
 <p>Scope is a function based, it is about what variable a function can access when it is invoked</p>
 <p>Context is all about object based, context is what the value the this keyword which is that reference that object that owns that current execution code</p>
@@ -815,16 +872,21 @@ var name = 'vindecode';
 <p>Non-Primitive type - has more than 1 value (obj,function,array)</p>
 <br /><br /><br />
 <p>To check if it is an array</p>
-<pre> var arr = [];
+
+```JavaScript
+ var arr = [];
  var notArr = {};
  console.log(Array.isArray(arr));
  console.log(Array.isArray(notArr));
  output:
  true
  false
- </pre>
+```
+
 <p>Primitive type can pass by value</p>
-<pre> var a = 5;
+
+```JavaScript
+ var a = 5;
  var b= a;
  b++;
  console.log(a);
@@ -832,9 +894,12 @@ var name = 'vindecode';
  output:
  5
  6
- </pre>
+```
+
 <p>while non-primitive type reference a value not passing a value</p>
-<pre> const obj1 = { name : 'vindecode', pass : '123' };
+
+```JavaScript
+ const obj1 = { name : 'vindecode', pass : '123' };
  const obj2 = obj1;
  obj2.pass = 'easypeasy';
  console.log(obj1);
@@ -878,11 +943,14 @@ var name = 'vindecode';
  output:
  Object { a: 1, b: 2, c: 3 }
  Object { a: 1, b: 2, c: 100 }
- </pre>
+```
+
 <p>They both equal because obj or non premitive type pointing on same memory on which the object is, not same with primitive had deferent memory locations. so it means that non primitive types are referencing.</p>
 <p>Good thing about referencing we save to much cost of memory because objects can hold a massive memory thats why it only reference a value not copying it.</p>
 <p>What we did for now is <strong>shalow cloning</strong>, what it means the we only copy the first layer of an object what if we had an object within an object</p>
-<pre> const obj1 = {a: 1, b: 2, c: 3, d : {messy : 'try to copy me!'}};
+
+```JavaScript
+ const obj1 = {a: 1, b: 2, c: 3, d : {messy : 'try to copy me!'}};
  const cloned = {...obj1};
  obj1.d.messy = "gotcha!...";
  console.log(cloned);
@@ -897,10 +965,13 @@ var name = 'vindecode';
  ​c: 3
  ​d: Object { messy: "gotcha!..." }
  // now were just referencing the second object we haven't copy it.
- </pre>
+```
+
 <br />
 <p>Ways to <strong>deep clone</strong> an object is to do JSON</p>
-<pre> const obj1 = {a: 1, b: 2, c: 3, d : {messy : 'try to copy me!'}};
+
+```JavaScript
+ const obj1 = {a: 1, b: 2, c: 3, d : {messy : 'try to copy me!'}};
  const cloned = JSON.parse(JSON.stringify(obj1));
  obj1.d.messy = "gotcha!...";
  console.log(cloned);
@@ -915,9 +986,12 @@ var name = 'vindecode';
  ​c: 3
  ​d: Object { messy: "gotcha!..." }
  //now we are copying all the objects inside an object, were not referencing it anymore.
- </pre>
+```
+
 <p>Remember that it may cause to slow down your program by cloning an object, specially if your object are massive data, it may took time to clone all of the data on an object if it is massive.</p>
-<pre>//exercise
+
+```JavaScript
+ //exercise
  // How would you compare two objects if they are pointing to a different location in memory but still have the same properties?
  var user1 = {name : "nerd", org: "dev"};
  var user2 = {name : "nerd", org: "dev"};
@@ -925,11 +999,14 @@ var name = 'vindecode';
  console.log(eq);
  output:
  false
- </pre>
+```
+
 <p>Other answer <a href="https://stackoverflow.com/questions/1068834/object-comparison-in-javascript" target="_blank" rel="noopener">stackoverflow</a></p>
 <br /><br /><br />
 <p><strong>Coercion</strong> is converting a type to different type. to make it equal.</p>
-<pre> 1 == '1'
+
+```JavaScript
+ 1 == '1'
  // coercion happens on double equal
  output:
  true
@@ -937,7 +1014,8 @@ var name = 'vindecode';
  // friendly advice always use 3 equals ;)
  output:
  false
- </pre>
+```
+
 <a href="https://dorey.github.io/JavaScript-Equality-Table/" target="_blank" rel="noopener">Javascript Equality Table</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank" rel="noopener">Equality comparisons and sameness</a><br /><br />
 <p><strong>Static VS Dynamic Typing</strong></p>
 <p>Static</p>
@@ -959,20 +1037,25 @@ var name = 'vindecode';
 <p><strong>Typescript</strong> so we have this to make our javascript static, to have less bugs</p>
 <p><strong>Strong and Weak Typing</strong></p>
 <p>Javascript is a weak typing. but typescript can make our javascript strong</p>
-<pre> var a = 'blablabla'
+
+```JavaScript
+ var a = 'blablabla'
  a + 123;
  output:
  "blablabla123"
  // this is how weak means its doing a coercion
  // in strong typed language you can't do this
- </pre>
+```
+
 <br /><br /><br />
 <p>Just a review about the function()</p>
 <p>When we invoke a function we already had a two parameters which is <strong>this </strong>and <strong>arguments.</strong></p>
 <p>When all know the arguments are like array of objects that has some weird behaviors for looping and etirations, so we wanna have avoid this, instead we gonna use some spread operators</p>
 <br /><br /><br />
 <p>Ways on invoking a function</p>
-<pre> function a(){
+
+```JavaScript
+ function a(){
  return 5;
  }
  a();
@@ -997,9 +1080,11 @@ var name = 'vindecode';
  four(4);
  output:
  4
- </pre>
+```
+
 <p>Remember that functions are objects a special objects or a callable objects</p>
-<pre>//this is the inside of a function
+```JavaScript
+ //this is the inside of a function
  /*
  somefunction(){
  code() - that we are going to execute when we call/invoke it
@@ -1010,10 +1095,12 @@ var name = 'vindecode';
  .bind()
  }
  } */
- 
- </pre>
+```
+
 <p>Other Ideas</p>
-<pre>// functions can be pass to a variable
+
+```JavaScript
+ // functions can be pass to a variable
  var a = function(){};
  // function can be a parameter of a function and run it within a function
  function a(fn){
@@ -1032,10 +1119,12 @@ var name = 'vindecode';
  c();
  output:
  w0w
- </pre>
+```
+
 <p>Because of this they called Javascript as <strong>First Class Citizens</strong></p>
 <p>Another idea</p>
-<pre>// we can put default parameter value to a function to avoid undefined
+```JavaScript
+ // we can put default parameter value to a function to avoid undefined
  function a(param = 10){
  return param;
  }
@@ -1043,7 +1132,8 @@ var name = 'vindecode';
  output:
  10
  // this is a new feature for es6
- </pre>
+```
+
 </div>
 <div>
 <div>May 1, 2019
@@ -1056,7 +1146,9 @@ var name = 'vindecode';
 <p><strong>Closures and Prototypes</strong></p>
 <p>Closures is all about storing data if someone is still referencing on it even though the main function already pop out to the call stack it will be stored to the closure.</p>
 <p>Closure is a combination of Lexical Scope and a function, closure will just happen if a function has an access of that variable. or its scope chain is available to that function.</p>
-<pre> function a(){
+
+```JavaScript
+ function a(){
  debugger; // to pause the program at this line
  let grandpa = "grandpa"
  return function b(){ //before running this function a() will be pop out to the call stack
@@ -1071,13 +1163,16 @@ var name = 'vindecode';
  // on the debugger just press step in to run the code line by line.
  output:
  "grandpa &gt; father &gt; son"
- </pre>
+```
+
 <p><strong>2 Main benefits of Closures</strong></p>
 <ul>
 <li>Memory Efficient</li>
 <li>Encapsulation</li>
 </ul>
-<pre>//it is memory efficient because of these
+
+```JavaScript
+ //it is memory efficient because of these
  function heavyDuty(index){
  const arr = new Array(7000).fill('V');
  console.log('created');
@@ -1107,9 +1202,12 @@ var name = 'vindecode';
  output:
  Created Again // now we do it once
  "V"
- </pre>
+```
+
 <p>Another Idea about closure and it is commonly interviewed problem</p>
-<pre>//here is the problem
+
+```JavaScript
+ //here is the problem
  const array = [1,2,3,4]
  for(var i=0; i &lt; array.length; i++){
  setTimeout(function(){console.log('Im at index ' + [i])}, 4000);
@@ -1143,7 +1241,8 @@ var name = 'vindecode';
  Im at index 1
  Im at index 2
  Im at index 3
- </pre>
+```
+
 </div>
 <div>
 <div>May 04, 2019
@@ -1153,7 +1252,9 @@ var name = 'vindecode';
 <figure><img src="img/Day11_img1.jpg" /></figure>
 <p>The object there is the base object.</p>
 <p>If we create an array or function when we add this __proto__ we can access the base object.</p>
-<pre>// Example
+
+```JavaScript
+ // Example
  const array = [];
  array.__proto__
  output:
@@ -1161,9 +1262,12 @@ var name = 'vindecode';
  array.__proto__.__proto__
  output:
  //it now returns an object which is the base object
- </pre>
+```
+
 <p>Now lets try prototypal inheritance</p>
-<pre> let dragon = {
+
+```JavaScript
+ let dragon = {
  name: "Alacad",
  fire: true,
  fight(){
@@ -1189,7 +1293,8 @@ var name = 'vindecode';
  "This is Kiki singing the dragon fire"
  true
  // now lizard has the property of sing() and fire which he inherit from the dragon
- </pre>
+```
+
 <p>Reminder that never ever use this __proto__ it affects the performance, but we have other ways of doing it later on Object Oriented Programming</p>
 <br /><br />
 <p>Good thing about inheretance is that it saves a lot of memory, because imagine what if we had a lot of lizard then its really too bad to copy those properties all over, so that is how very important is inheritance is. Were being efficient with our code</p>
@@ -1204,7 +1309,9 @@ var name = 'vindecode';
 <li>bind()</li>
 </ul>
 <p>The reason why we can still access that properties its because functions that we created is inherting the parent which is the base FUNCTION</p>
-<pre>// just another idea on loop
+
+```JavaScript
+ // just another idea on loop
  const array = [1,2,3,4,5,6]
  for(let i in array){
  console.log('this is the items of the array', array[i]);
@@ -1216,27 +1323,34 @@ var name = 'vindecode';
  this is the items of the array 4
  this is the items of the array 5
  this is the items of the array 6
- </pre>
+```
+
 <br /><br />
 <p>As i have mentioned were going to inherit an object without using that evil __proto__</p>
-<pre> const human = {
+
+```JavaScript
+ const human = {
  mortal: true
  }
  const einstien = Object.create(human) // einstien is still a human so we are goin to inherit human
  einstien.mortal
  output:
  true
- </pre>
+```
+
 <p>Remember that only functions has a prototype property</p>
 <p>Adding a function to the Date which is already on javascript, how can we add a function their ?</p>
-<pre> Date.prototype.lastYear = function(){
+
+```JavaScript
+ Date.prototype.lastYear = function(){
  return this.getFullYear() - 1;
  }
  new Date('1990-10-10').lastYear();
  output:
  1989
- </pre>
-<pre>//modify .map to print "V" at the end of each item
+```
+```JavaScript
+ //modify .map to print "V" at the end of each item
  Array.prototype.map = function(){
  let arr = [];
  for (let i =0; i &lt; this.length; i++){
@@ -1247,12 +1361,15 @@ var name = 'vindecode';
  console.log([1,2,3].map());
  output:
  Array(3) [ "1V", "2V", "3V" ]
- </pre>
+```
+
 <p>But avoid modefying existed functions on the javascript it may cause trouble to other codes that uses it.</p>
 <p><strong>Starting OOP</strong></p>
 <p>From Procedural to Cleaner Code using OOP</p>
 <p><strong>Factory Function</strong> is a function that creates object</p>
-<pre>// step 1 of OOP without factory functions
+
+```JavaScript
+ // step 1 of OOP without factory functions
  //Create two elfs
  const elf = {
  name: 'peter',
@@ -1287,9 +1404,12 @@ var name = 'vindecode';
  //so we avoided lots of code, but their is still a problem here
  //what if we require 1000 elfs here, so we require a lot of space to store data
  //each time we create elfs we store attack() function on each of them so we need to apply closures and prototype next
- </pre>
+```
+
 <p><strong>Object.create</strong></p>
-<pre> const elfFunctions = {
+
+```JavaScript
+ const elfFunctions = {
  attack(){
  return 'Attack with ' + this.weapon
  }
@@ -1304,9 +1424,12 @@ var name = 'vindecode';
  console.log(peter.attack());
  const molly = createElf('molly', 'gun');
  console.log(molly.attack());
- </pre>
+```
+
 <p><strong>Constructor Function</strong></p>
-<pre> function Elf(name,weapon){
+
+```JavaScript
+ function Elf(name,weapon){
  this.name = name;
  this.weapon = weapon;
  }
@@ -1323,9 +1446,12 @@ var name = 'vindecode';
  // remember that constructor function must have a new keyword, the built in constructor function in javascript are starts with capital letter
  When creating a constructor function use capital letter on first letter to let know other developer that it is a constructor and they were goin to use the new keyword
  // ex. Function(),Number(),Array()..etc
- </pre>
+```
+
 <p>By using constructor functions we can also create another function that all elfs that we created can use</p>
-<pre>// another idea here.
+
+```JavaScript
+ // another idea here.
  function Elf(name,weapon){
  this.name = name;
  this.weapon = weapon;
@@ -1336,7 +1462,8 @@ var name = 'vindecode';
  peter
  output:
  Object { name: "peter", weapon: "stones" }
- </pre>
+```
+
 <p>Because of the keyword new and we all know that new is defined as constructor function, new also creates prototype thats why we are able to create a Elf.prototype.attack but always remember that all functions has a prototype, yah its confusing but just code and code you'll just understand why.</p>
 <figure><img src="img/Day11_img3.jpg" /></figure>
 </div>
@@ -1345,7 +1472,9 @@ var name = 'vindecode';
 <h6>Day 12</h6>
 </div>
 <p><strong>ES6 Classes</strong></p>
-<pre>// comment here
+
+```JavaScript
+ // comment here
  class Elf{
  constructor(name,weapon){
  this.name = name;
@@ -1361,7 +1490,8 @@ var name = 'vindecode';
  const peter = new Elf('peter','stones')
  console.log(peter.attack())
  console.log(peter.sing())
- </pre>
+```
+
 <p>Common interview question, why we are not putting the attack function to the constructor ?.</p>
 <p>Its because constructor runs everytime we create an instance, name and weapon are unique but the attack is shares by all the elfs and it will cost a lot of memory if we want it to run everytime we instanciate.</p>
 <p>instanciate is when we call a new Elf in our code that is instanciate, peter instanciate with elf class</p>
@@ -1370,16 +1500,21 @@ var name = 'vindecode';
 <p>What we did on classes can also be created on Object.create, although Object.create was the most pure thing, but it depends uppon the company eigther they will use Object.create or with classes.</p>
 <hr />
 <p><strong>4 ways on manipulating the this key word</strong></p>
-<pre>//new binding this
+
+```JavaScript
+ //new binding this
  function Person(name,age){
  this.name = name;
  this.age = age;
  }
  const person1 = new Person('Peter', 55);
  person1
- //person1 is now an object because of constructor we instanciate and because it is now an object the this keyword that we used <br /> on function Person will directly point to the person1 object thats why we get it right and not undefined.</pre>
+ //person1 is now an object because of constructor we instanciate and because it is now an object the this keyword that we used <br /> on function Person will directly point to the person1 object thats why we get it right and not undefined.
+```
+
 <hr />
-<pre> //implicit binding
+```JavaScript
+ //implicit binding
  const person = {
  name: 'vindecode',
  age: 55,
@@ -1388,9 +1523,13 @@ var name = 'vindecode';
  }
  }
  person.hi();
- //it directly call its own object</pre>
+ //it directly call its own object
+```
+
 <hr />
-<pre> //explicit binding
+
+```JavaScript
+ //explicit binding
  const person = {
  name: 'vindecode',
  age: 55,
@@ -1400,9 +1539,13 @@ var name = 'vindecode';
  }
  person.hi();
  //we wanted to point this to window because we all know that setTimeout is a web API and can be seen on the window object. so we bind it to the window object using the bind()
- //this explicit ways can also use the call and apply method</pre>
+ //this explicit ways can also use the call and apply method
+```
+
 <hr />
-<pre>//arrow functions
+
+```JavaScript
+ //arrow functions
  const person = {
  name: 'vindecode',
  age: 55,
@@ -1416,10 +1559,13 @@ var name = 'vindecode';
  person.hi();
  //becuase of arrow function we allow it to point where it was called, it acts like implicit because we call it on function hi
  //without arrow function that this will point to window object
- </pre>
+```
+
 <hr />
 <p><strong>Inheritance</strong></p>
-<pre> class Character{ //this is a super class
+
+```JavaScript
+ class Character{ //this is a super class
  constructor(name,weapon){
  this.name = name;
  this.weapon = weapon;
@@ -1447,7 +1593,8 @@ var name = 'vindecode';
  console.log(shrek.buildHouse());
  //As you can see super or the Parent class here represents the general needs of the sub classes.
  // extends is linking not copying
- </pre>
+```
+
 <hr />
 <p><strong>public and private</strong> is still under construction</p>
 <hr />
@@ -1467,7 +1614,9 @@ var name = 'vindecode';
 <li>No side effects</li>
 <li>input --&gt; output same</li>
 </ul>
-<pre>//side effects is a function that modifies anything outside of it self
+
+```JavaScript
+ //side effects is a function that modifies anything outside of it self
  const array = [1,2,3]
  function a(arr){
  arr.pop()
@@ -1487,9 +1636,12 @@ var name = 'vindecode';
  console.log(array); //original no side effects
  output:
  Array [ 1, 2 ] // function
- Array(3) [ 1, 2, 3 ] // original variable array</pre>
+ Array(3) [ 1, 2, 3 ] // original variable array
+```
+
 <hr />
-<pre> //another no side effects
+```JavaScript
+ //another no side effects
  const array = [1,2,3]
  function multiplyByTen(arr){
  return arr.map(item =&gt; item * 10)
@@ -1499,9 +1651,12 @@ var name = 'vindecode';
  output:
  Array(3) [ 10, 20, 30 ] // function
  Array(3) [ 1, 2, 3 ] // original variable array it has no side effect
- </pre>
+```
+
 <p><strong>Referential Transparency</strong></p>
-<pre> function a(num1,num2){
+
+```JavaScript
+ function a(num1,num2){
  return num1 + num2
  }
  function b(num){
@@ -1514,8 +1669,10 @@ var name = 'vindecode';
  14
  //and both of this are not having any side affects to the outside world because they only modifying their parameters <br />and parameters are local variables
  //the idea also of input --&gt; output is that even how many times we run the function the output will always be the same nothing will change.
- </pre>
-<pre>//another idea on loop
+```
+
+```JavaScript
+ //another idea on loop
  const array = ["A","B","C","D"];
  function myArray(arr){
  arr.forEach(item =&gt; {
@@ -1528,22 +1685,27 @@ var name = 'vindecode';
  B
  C
  D
- </pre>
-<pre>//another idea about array
+```
+
+```JavaScript
+ //another idea about array
  function greaterThanTen(array){
  return array.map(item =&gt; item &gt; 10 ? true : false)
  }
  greaterThanTen([1,2,3,4,5,6,7,8,9,10,11])
  output:
  Array(11) [ false, false, false, false, false, false, false, false, false, false, true]
- </pre>
+```
+
 </div>
 <div>
 <div>May 06, 2019
 <h6>Day 13</h6>
 </div>
 <p><strong>Idempotence</strong> is about having the same result no matter how many times we run the function</p>
-<pre> function a(num){
+
+```JavaScript
+ function a(num){
  return num;
  }
  a(a(a(5)));
@@ -1553,7 +1715,8 @@ var name = 'vindecode';
  Math.abs(Math.abs(Math.abs(-100)));
  output:
  100
- </pre>
+```
+
 <p>Get the idea about Idempotence ? no matter how many times we call the function the output would be the same</p>
 <hr />
 <p><strong>Imperative vs Declarative</strong></p>
@@ -1561,16 +1724,21 @@ var name = 'vindecode';
 <li><strong>Imperative</strong> - is code that tells the machine on what to do and how to do. or a step by step guide to get the required task that you want it to do.</li>
 <li><strong>Declarative</strong> - just a direct task no step by step instruction</li>
 </ul>
-<pre>// dont be confused by this
+
+```JavaScript
+ // dont be confused by this
  for( let i= 0; i &lt; 1000; i++){ //this is Imperative
  console.log(i)
  }
  [1,2,3].forEach(item =&gt; console.log(item)); //this is declarative
- </pre>
+```
+
 <p>Declarative code is better, but we cannot avoid having Imperative code.</p>
 <hr />
 <p><strong>Immutability</strong> is about not changing everything or not changing the state, just copy it but do not change</p>
-<pre> const obj = {
+
+```JavaScript
+ const obj = {
  name : "vince",
  clone() {
  return {... obj} //this is pure
@@ -1585,23 +1753,32 @@ var name = 'vindecode';
  Object { name: "vince", clone: clone() }
  Object { name: "Nana", clone: clone() }
  //now we are not changing everything nor its state but copying it.
- </pre>
+```
+
 <p><strong>Currying</strong> is taking a parameter of a function one at a time</p>
-<pre> const multiply = (a) =&gt; (b) =&gt; a*b;
+
+```JavaScript
+ const multiply = (a) =&gt; (b) =&gt; a*b;
  const multiplyByTen = multiply(10);
  multiplyByTen(5);
  output:
  50
- </pre>
+```
+
 <p><strong>Partial Application</strong></p>
-<pre> const multiply = (a,b,c) =&gt; a*b*c
+
+```JavaScript
+ const multiply = (a,b,c) =&gt; a*b*c
  const multiplyByFive = multiply.bind(null,5); //null because we do not have this here but we gave argument 5 to parameter a
  multiplyByFive(10,4) //which is the b and c parameters
  output:
  200
- </pre>
+```
+
 <p><strong>Memoization</strong> is about remembering things that already been calculated so that it doesnt required time to calculate it again</p>
-<pre> const cache = {}
+
+```JavaScript
+ const cache = {}
  function addTo80(n){
  if(n in cache){
  return cache[n];
@@ -1624,9 +1801,13 @@ var name = 'vindecode';
  Calculating in a long time
  100
  Calculating in a long time
- 110</pre>
+ 110
+```
+
 <hr />
-<pre> //optimizing our code using closures
+
+```JavaScript
+ //optimizing our code using closures
  //moving the cache to the function, because we need to avoid global variables
  function addTo80(){ //we are transfering the param because we are now calling returned func
  const cache = {}
@@ -1655,11 +1836,14 @@ var name = 'vindecode';
  130
  130
  90
- </pre>
+```
+
 <br /><hr />
 <p><strong>Compose</strong> is something like a data processed by a function and output with a data and processed by a function again and so on and so fort</p>
 <p>data --&gt; fn --&gt; data --&gt; fn --&gt; data</p>
-<pre>// accepts a negative number
+
+```JavaScript
+ // accepts a negative number
  //multiply it by 3
  //convert to positive number
  const compose = (f,g) =&gt; (data) =&gt; f(g(data))
@@ -1669,20 +1853,26 @@ var name = 'vindecode';
  multiplyBy3AndAbsolute(-50); //param of data
  output:
  150
- </pre>
+```
+
 <p>Compose is a very strong technique in functional programming so please practice this technique try to do something more.</p>
 <p>Other than compose we also have a <strong>Pipe</strong> the only difference about this is that Pipe do the reverse thing example</p>
 <p>Compose : a() -&gt; b() -&gt; c()</p>
 <p>Pipe : c() -&gt; b() -&gt; a()</p>
 <hr />
 <p><strong>Aritiy</strong> is the number of parameter of a function</p>
-<pre> function a(num1,num2) //it has a arity of 2
+
+```JavaScript
+ function a(num1,num2) //it has a arity of 2
  function b(f,g,h) //it has a arity of 3
- </pre>
+```
+
 <p>Just a reminder, it is better that the maximum of parameter of your function is two, because it is easy to maintain and reusable</p>
 <hr />
 <p>Exercise The Amazon Exercise</p>
-<pre>// Amazon Shopping
+
+```JavaScript
+ // Amazon Shopping
  const user = {
  name: 'Kim',
  active: true,
@@ -1731,7 +1921,8 @@ var name = 'vindecode';
  return Object.assign({},user,{cart: []})
  }
  //updated code of this is on the js file
- </pre>
+```
+
 <p>As you would expect functional is more powerful than oop</p>
 <figure><img src="img/Day13_img1.jpg" alt="" /></figure>
 <p><strong>Review</strong></p>
@@ -1743,7 +1934,9 @@ var name = 'vindecode';
 <strong>Poblems may encounter</strong>
 <p>&gt; Problems with inheretance is that it may cause errors when updating or changing sub class or its super class because it will afect each classes</p>
 <p>&gt; Hierarchy problem when you start to add some classes example below</p>
-<pre>Class a(1,2,3,4)
+
+```JavaScript
+Class a(1,2,3,4)
  Class b(1,2,3,4)
 Class d(1,2,3,4)
  Class c(1,2,3,4)
@@ -1754,7 +1947,8 @@ what if we are going to add a new class on b that only needs the value 3
  until the program start updating more and more it will cause a lot of errors,
  then we start to refactor it again until of a sudden we start violating the prenciple of doing dry code or do not repeat yourself.
  this is the most common problem on inheretance
- </pre>
+```
+
 <hr />
 <p>Composition focuses on what it has or what to do we that data</p>
 <p>The problem of inheretance can be solved using composition</p>
@@ -1789,17 +1983,22 @@ what if we are going to add a new class on b that only needs the value 3
 <p>Call stack - This is were the code was read, it tells you were you are on the code</p>
 <p>Memory Heap - This is were the memory allocation happens</p>
 <p>Recursion - is a function that calls it self</p>
-<pre> function foo(){
+
+```JavaScript
+ function foo(){
  foo();
  }
  foo();
- </pre>
+```
+
 <figure><img src="img/Day15_img1.jpg" alt="" /></figure>
 <p>synchronous one task at a time</p>
 <p>asynchronous multiple task at a time</p>
 <p>Event Listener are on the callback queue already</p>
 <p>Call back pyramid of doom</p>
-<pre> movePlayer(100, 'Left', function(){
+
+```JavaScript
+ movePlayer(100, 'Left', function(){
  movePlayer(150, 'Left', function(){
  movePlayer(200, 'Left', function(){
  movePlayer(350, 'Left', function(){
@@ -1807,10 +2006,13 @@ what if we are going to add a new class on b that only needs the value 3
  });
  });
  });
- </pre>
+```
+
 <figure><img src="img/Day15_img2.jpg" alt="" /></figure>
 <p>New In ES using promise, higher priority than Callback Queue</p>
-<pre> console.log("1");
+
+```JavaScript
+ console.log("1");
  setTimeout(()=&gt;{console.log("2")},0);
  Promise.resolve('3').then((data) =&gt; console.log(data));
  console.log("4");
@@ -1820,13 +2022,16 @@ what if we are going to add a new class on b that only needs the value 3
  3
  2
  //now you can see who was the highest priority
- </pre>
+```
+
 <p>Callback Queue - Task Queue</p>
 <p>Job Queue - Microtask Queue</p>
 <hr />
 <p><strong>Promises</strong> a new feature of es6</p>
 <p>A promise is an object that may produce a single value some time in the future. Either a reserve value, or a reson that its not resolved (rejected)</p>
-<pre>Instantiating new Promise
+
+```JavaScript
+ Instantiating new Promise
  const promise = new Promise((resolve,reject) =&gt; {
  if(true){
  resolve("It worked");
@@ -1842,9 +2047,12 @@ what if we are going to add a new class on b that only needs the value 3
  It worked
  It worked
  //it worked cause we statically put true to our condition
- </pre>
+```
+
 <p>Throwing an error</p>
-<pre> const promise = new Promise((resolve, reject) =&gt; {
+
+```JavaScript
+ const promise = new Promise((resolve, reject) =&gt; {
  if(true){
  resolve('It worked')
  }else{
@@ -1865,8 +2073,10 @@ what if we are going to add a new class on b that only needs the value 3
  output:
  Promise { : "pending" }
  Error!
- </pre>
+```
+
 <p>Great power about this promises are we can run multiple task at the background.</p>
+
 <pre> const promise1 = new Promise((resolve, reject) =&gt; {
  setTimeout(resolve, 100, "hallow")
  })
