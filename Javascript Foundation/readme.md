@@ -1126,6 +1126,7 @@
 
 <p>Because of this they called Javascript as <strong>First Class Citizens</strong></p>
 <p>Another idea</p>
+
 ```JavaScript
  // we can put default parameter value to a function to avoid undefined
  function a(param = 10){
