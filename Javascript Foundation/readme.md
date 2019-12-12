@@ -496,6 +496,7 @@
 ```
 
 <p>At the Global Execution Context we have the global and this objects while on the execution context/ function we created, during the creation phase there are two objects will be created which will be the <strong>this and arguments</strong></p>
+
 ```JavaScript
  function person(person1, person2){
  console.log(arguments);
