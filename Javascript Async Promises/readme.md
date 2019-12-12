@@ -287,4 +287,27 @@ function racer3() {
 Promise.race([racer1(),racer2(),racer3()]).then(winner => { console.log(winner) })
 ```
 
+#### Good Thing About Promises is Chaining
+
+Every function that returns a promise we can call a callback by using `.then`.
+
+`.then`, `.catch` and `.finally` always returns a promise that is why after using `.then` we can still chain another `.then`
+
+Every returned promise has a static and prototype methods
+
+##### Prototype methods has 3 of them
+- Promise.prototype.then(onResolved,onRejected) or Promise.then(onResoved,onRejected)
+
+> Accepts a function resolved and rejected, resolved function that returns a value if resolved and rejected function that returns a reason why it was rejected.
+
+`It is better to separate resolved and rejected, use .then for resolve only and .catch for rejected`
+
+- Promise.prototype.catch(onRejected) or Promise.catch(onRejected)
+
+> Accepts a function rejected that returns the reason why it was rejected.
+
+- Promise.prototype.finally(onFinally) or Promise.prototype.finally(onFinally)
+
+> Accepts a function that will return no matter if it was resolve or rejected.
+
 [Continue to Async](/Javascript%20Async%20Promises/async.md)
