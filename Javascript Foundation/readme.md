@@ -1,10 +1,9 @@
-<div>
-<div>
-<div>April 06, 2019
-<h6>Day 1</h6>
-</div>
-<p><strong>Logical Operators</strong> using this method</p>
-<pre> var a = 100;
+#### April 06, 2019
+##### Day 1
+*Logical Operators* using this method
+
+```JavaScript
+ var a = 100;
  console.log(a &gt; 70 ? 'yes' : 'no');
  output:
  yes
@@ -17,9 +16,11 @@
  console.log(isFail);
  output:
  fail
- </pre>
+```
+
 <p>Another ideas</p>
-<pre> console.log(true &amp;&amp; false);
+```JavaScript
+ console.log(true &amp;&amp; false);
  output
  false
  console.log(true &amp;&amp; true);
@@ -34,17 +35,22 @@
  
  // you can use this as functions that returns a boolean type
  to help shorten your code
- 
- </pre>
+```
+
 <p>Other ways to console a value</p>
-<pre> var name = 'vindecode';
+
+```JavaScript
+var name = 'vindecode';
  var age = 22;
  console.log('Hi im %s and I am %s year\'s old', name, age);
  output:
  Hi im vindecode and I am 22 year's old
- </pre>
+ ```
+
 <p>Small letters is always greater than Capital letters and all letters are greater than special characters</p>
-<pre> console.log('a' &gt; 'A');
+
+```JavaScript
+ console.log('a' &gt; 'A');
  output:
  true
  console.log('a' &lt; 'A');
@@ -56,27 +62,34 @@
  console.log('a' &lt; '@' &amp;&amp; 'A' &lt; '@');
  output:
  false
- </pre>
+```
+
 <p>The undefined and the null are equal</p>
-<pre> console.log(null == undefined);
+
+```JavaScript
+ console.log(null == undefined);
  output:
  true
- </pre>
+```
+
 <p>Zero and false are also equal</p>
-<pre> console.log(0 == false);
+
+```JavaScript
+ console.log(0 == false);
  output:
  true
- 
  // so you can use 1 or 0 as your true or false comparison
- 
- </pre>
+```
+
 </div>
 <div>
 <div>April 07, 2019
 <h6>Day 2</h6>
 </div>
 <p><strong>While loops</strong> is a loop that will always execute untill the condition is not true</p>
-<pre> let result = 1;
+
+```JavaScript
+ let result = 1;
  let counter = 0;
  while (counter &lt; 10) {
  result = result * 2;
@@ -86,9 +99,12 @@
  output:
  1024
  // No explanation just a syntax
- </pre>
+```
+
 <p><strong>Do While loops</strong> is a loop that execute first before doing the condition</p>
-<pre> let sayYes;
+
+```JavaScript
+ let sayYes;
  do {
  sayYes = prompt("Please say yes or else i will ask again");
  }
@@ -97,9 +113,12 @@
  output:
  yes
  // I use .toLowerCase() method to allow key sensitivity
- </pre>
+```
+
 <p><strong>For loop</strong> with break;</p>
-<pre> for (let current = 20; ; current = current + 1) {
+
+```JavaScript
+ for (let current = 20; ; current = current + 1) {
  if (current % 7 == 0) {
  console.log(current);
  break;
@@ -108,17 +127,23 @@
  output:
  21
  // We can use this style for infinite loops (looks like while loops never stop until it true the condition)
- </pre>
+```
+
 <p>shortcuts for adding, subtracting, multiply, device by itself</p>
-<pre> a+=1;
+
+```JavaScript
+ a+=1;
  a-=1;
  a*=2;
  a/=5;
  a++;// multiply and devide will not work on this
  a--;// multiply and devide will not work on this
- </pre>
+```
+
 <p><strong>Switch syntax</strong></p>
-<pre> switch (prompt("What is the weather like?")) {
+
+```JavaScript
+ switch (prompt("What is the weather like?")) {
  case "rainy":
  console.log("Remember to bring an umbrella.");
  break; case "sunny":
@@ -129,7 +154,8 @@
  console.log("Unknown weather type!");
  break;
  }
- </pre>
+```
+
 </div>
 <div>
 <div>April 09, 2019
@@ -137,12 +163,15 @@
 </div>
 <p><strong>Regular Expression</strong></p>
 <p>You can get each letter of a string by doing this</p>
-<pre> var name = "John Doe";
+
+```JavaScript
+ var name = "John Doe";
  name[1];
  output:
  o
  // you can use loop to get each of the letters
- </pre>
+```
+
 <p><strong>Functions</strong> You can pass a function to a variable</p>
 <pre> var addNumbers = function(n1 ,n2) {
  console.log(n1 + n2) ;
