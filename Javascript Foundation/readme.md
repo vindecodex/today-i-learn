@@ -1085,6 +1085,7 @@
 ```
 
 <p>Remember that functions are objects a special objects or a callable objects</p>
+
 ```JavaScript
  //this is the inside of a function
  /*
