@@ -332,6 +332,18 @@ The next two of static methods were used for dealing with multiple promise
 
 - Promise.race(arrayOfPromises) or Promise.race([promise1,promise2])
 
-> Runs a promise in parallel but returns the fastest results.
+
+***
+
+#### Rules on using Promises from [Hackernoon](https://hackernoon.com/understanding-promises-in-javascript-13d99df067c1)
+
+1. Use promises whenever you are using async or blocking code.
+2. resolve maps to then and reject maps to catch for all practical purposes.
+3. Make sure to write both .catch and .then methods for all the promises.
+4. If something needs to be done in both the cases use .finally
+5. We only get one shot at mutating each promise.
+6. We can add multiple handlers to a single promise.
+7. The return type of all the methods in Promise object whether they are static methods or prototype methods is again a Promise
+8. In Promise.all the order of the promises are maintained in values variable irrespective of which promise was first resolved.
 
 [Continue to Async](/Javascript%20Async%20Promises/async.md)
