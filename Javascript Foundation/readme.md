@@ -1644,6 +1644,7 @@
 ```
 
 <hr />
+
 ```JavaScript
  //another no side effects
  const array = [1,2,3]
