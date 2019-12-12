@@ -2082,7 +2082,8 @@ what if we are going to add a new class on b that only needs the value 3
 
 <p>Great power about this promises are we can run multiple task at the background.</p>
 
-<pre> const promise1 = new Promise((resolve, reject) =&gt; {
+```JavaScript
+ const promise1 = new Promise((resolve, reject) =&gt; {
  setTimeout(resolve, 100, "hallow")
  })
  const promise2 = new Promise((resolve, reject) =&gt; {
@@ -2098,9 +2099,12 @@ what if we are going to add a new class on b that only needs the value 3
  .then(values =&gt;{console.log(values)})
  output:
  Array(4) [ "hallow", "yeee haa!", "Hoola", "It was me!" ]
- </pre>
+```
+
 <p>Real World Application of promise</p>
-<pre>// we used this to fetch json
+
+```JavaScript
+ // we used this to fetch json
  const urls = [
  'https://jsonplaceholder.typicode.com/users',
  'https://jsonplaceholder.typicode.com/posts',
@@ -2114,7 +2118,8 @@ what if we are going to add a new class on b that only needs the value 3
  console.log(results[2])
  }).catch(() =&gt; console.log("miss spelled the url or you do not have an internet"))
  //You need an internet to make this work
- </pre>
+```
+
 </div>
 <div>
 <div>May 11, 2019
@@ -2124,7 +2129,9 @@ what if we are going to add a new class on b that only needs the value 3
 <p><strong>Async Await</strong> is a function that returns a promise, but the benefit of async await is that it makes code easier to read</p>
 <p>It does the same thing on promises on es6 / es 2015 but only the difference is the syntax or what they called as "Syntactic Sugar" - it does the same thing but only the syntax are different.</p>
 <p>promises uses .then keywords, while async await uses async and await keywords.</p>
-<pre>// using es6 promise
+
+```JavaScript
+ // using es6 promise
  fetch('https://jsonplaceholder.typicode.com/users')
  .then(resp =&gt; resp.json())
  .then(console.log)
@@ -2135,9 +2142,12 @@ what if we are going to add a new class on b that only needs the value 3
  console.log(result)
  }
  fetchUsers()
- </pre>
+```
+
 <p>Another example</p>
-<pre>//this is es6
+
+```JavaScript
+ //this is es6
  const urls = [
  'https://jsonplaceholder.typicode.com/users',
  'https://jsonplaceholder.typicode.com/posts',
@@ -2160,9 +2170,12 @@ what if we are going to add a new class on b that only needs the value 3
  console.log('Oops' ,err)
  }
  }
- </pre>
+```
+
 <p><strong>ES9 / ES 2018 the object spread operators</strong></p>
-<pre> const animals = {
+
+```JavaScript
+ const animals = {
  tiger: 22,
  lion: 5,
  monkey: 2
@@ -2213,9 +2226,12 @@ what if we are going to add a new class on b that only needs the value 3
  rest
  output
  Object { fish: 5, lion: 10 }
- </pre>
+```
+
 <p>The <strong>finally</strong> keyword</p>
-<pre> const urls = [
+
+```JavaScript
+  const urls = [
  'https://jsonplaceholder.typicode.com/users',
  'https://jsonplaceholder.typicode.com/posts',
  'https://jsonplaceholder.typicode.com/albums',
@@ -2227,7 +2243,8 @@ what if we are going to add a new class on b that only needs the value 3
  console.log('albums',array[2])
  }).catch('ooops')
  .finally(() =&gt; console.log('Extra Task Here'));
- </pre>
+```
+
 <p>The use of finally is that to run extra functionality no matter what happen even if it throws an error</p>
 <hr />
 <p>The <strong>for await of</strong> is used to loop await promises</p>
@@ -2238,7 +2255,9 @@ what if we are going to add a new class on b that only needs the value 3
 <li>Sequence - after finish the first one another one will be run</li>
 <li>Race - who comes back first just do that one and ignore the rest</li>
 </ul>
-<pre> const promisify = (item,delay) =&gt;
+
+```JavaScript
+ const promisify = (item,delay) =&gt;
  new Promise((resolve) =&gt;
  setTimeout(() =&gt; resolve(item),delay));
  const a = () =&gt; promisify('a', 100);
@@ -2285,14 +2304,17 @@ what if we are going to add a new class on b that only needs the value 3
  race is done: a //it takes the smallest task which is 100ms
  parallel is done: a b c //it takes the longest task which is 5seconds
  sequence is done: a b c //the sum of all the task 8seconds and 100ms
- </pre>
+```
+
 </div>
 <div>
 <div>May 12, 2019
 <h6>Day 17</h6>
 </div>
 <p>Javascript Module, a module is used to create large applications becuase without modules we cannot create large applications because of this problems. When we create a function we need a function that can communicate with other function so we solved this by creating a global variable, but the problem with this is that, this global variable can posibly be overwritten without a notice. So to solve this we need to use modules, the one who organize our functions and variables.</p>
-<pre>// Global Scope
+
+```JavaScript
+ // Global Scope
  var a ="a";
  // Function Scope
  function a(){
@@ -2301,9 +2323,12 @@ what if we are going to add a new class on b that only needs the value 3
  // Block Scope
  const a = "a";
  let b = "b";
- </pre>
+```
+
 <p>The first module, <strong>Module Pattern</strong></p>
-<pre>// We can use IIFE and assigned it to a variable and if we want something inside a function <br /> we can just return an object with the function inside
+
+```JavaScript
+ // We can use IIFE and assigned it to a variable and if we want something inside a function <br /> we can just return an object with the function inside
  const getWinner = (function(){
  var vince = 500;
  var jjj = 400;
@@ -2317,26 +2342,32 @@ what if we are going to add a new class on b that only needs the value 3
  })() // we can import some functions here as a parameter of our IIFE
  getWinner.fight('Vincent','Mark')
  // Now we can access this, and its not in a global, and we have a private variable which is vince and jjj
- </pre>
+```
+
 <p>But were still had a problem in here, because were still poluting getWinner as a global</p>
 <p>To solve this we can use CommonJs but CommonJs is a synchronous it may slow up our application and to solve this we had a module bundlers browserify and WebPack to bundle all modules into one javascript file. CommonJs commonly used in node.js applications</p>
 <p>Another is AMD still synchronous, its commonly used by now</p>
 <p>We also have UMD combination of both AMD and CommonJs but its just an if else statement.</p>
 <hr />
 <p>The<strong> ES6 Modules</strong></p>
-<pre>//specifiy the path of the file ./js/main.js
+
+```JavaScript
+ //specifiy the path of the file ./js/main.js
  import module1 from 'jsfile'
  import module1 from 'anotherjsfile'
  export function jump(){
  }
- </pre>
+```
+
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export" target="_blank" rel="noopener">More ES6 Module Export</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank" rel="noopener">More ES6 Module Import</a><br /><br /><hr /></div>
 <div>
 <div>May 13, 2019
 <h6>Day 18</h6>
 </div>
 <p><strong>Error Handling</strong></p>
-<pre>// try catch
+
+```JavaScript
+ // try catch
  function fail(){
  try{
  console.log(abcdefg);
@@ -2346,9 +2377,13 @@ what if we are going to add a new class on b that only needs the value 3
  // console.log('Opsie', a.message);
  // console.log('Opsie', a.stack);
  }
- }</pre>
+ }
+```
+
 <hr />
-<pre> throw new Error('Opsie') // to stop all the program
+
+```JavaScript
+ throw new Error('Opsie') // to stop all the program
  throw Error // to stop all the program
  // try catch with finally 
  function fail(){
@@ -2360,11 +2395,14 @@ what if we are going to add a new class on b that only needs the value 3
  console.log('Still Good');
  }
  }
- </pre>
+```
+
 <p>Remember that try catch is not good for asynchronous</p>
 <hr />
 <p>Asynchronous Error Handling</p>
-<pre> Promise.resolve('asyncfail')
+
+```JavaScript
+ Promise.resolve('asyncfail')
  .then(response =&gt; {
  throw new Error('#1 fail')
  return response
@@ -2375,10 +2413,13 @@ what if we are going to add a new class on b that only needs the value 3
  .catch(err =&gt; {
  console.log(err)
  })
- </pre>
+```
+
 <p>Async Await Error Handling</p>
 <p>As we say try catch is only for synchronous, but async await can use this because of the key word await</p>
-<pre> (async function(){
+
+```JavaScript
+ (async function(){
  try{
  await Promise.resolve('good')
  await Promise.reject('bad')
@@ -2387,9 +2428,12 @@ what if we are going to add a new class on b that only needs the value 3
  console.log(err)
  }
  })()
- </pre>
+```
+
 <p>Extending Erros to customize so that we can avoid showing too much information about our error, because it will give some reference of hackers to exploit our applications</p>
-<pre> class authenticationError extends Error{
+
+```JavaScript
+ class authenticationError extends Error{
  constructor (message){
  super(message)
  this.favouriteSnacks = "grapes"
@@ -2400,9 +2444,13 @@ what if we are going to add a new class on b that only needs the value 3
  console.log(a.favouriteSnacks)
  output:
  "Oppsie"
- "grapes"</pre>
+ "grapes"
+```
+
 <hr />
-<pre> //more customize error you can make, e.g
+
+```JavaScript
+ //more customize error you can make, e.g
  class databaseError extends Error{
  constructor (message){
  super(message)
@@ -2417,7 +2465,8 @@ what if we are going to add a new class on b that only needs the value 3
  this.favouriteSnacks = "grapes"
  }
  }
- </pre>
+```
+
 <p>Error is not really an error but a feature with the use of Error Handling</p>
 <p>When you right code always think about validation of every input of a user to avoid errors</p>
 </div>
