@@ -310,4 +310,28 @@ Every returned promise has a static and prototype methods
 
 > Accepts a function that will return no matter if it was resolve or rejected.
 
+##### Static methods has 4 of them
+
+The first two of static methods were helpers. It helps you to create resolve and rejected value.
+
+- Promise.resolve(value)
+
+> returns a resolve value
+
+- Promise.reject(value)
+
+> return a reject value
+
+The next two of static methods were used for dealing with multiple promise
+
+- Promise.all(arrayOfPromises) or Promise.all([promise1,promise2])
+
+> Runs a promise in parallel and return a value of all promises in exact order the way you put it on the array
+
+`Always use .catch on each promises to avoid blocking the other promises from running`
+
+- Promise.race(arrayOfPromises) or Promise.race([promise1,promise2])
+
+> Runs a promise in parallel but returns the fastest results.
+
 [Continue to Async](/Javascript%20Async%20Promises/async.md)
