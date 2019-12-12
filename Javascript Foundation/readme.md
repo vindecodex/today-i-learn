@@ -215,7 +215,9 @@ var name = 'vindecode';
 ```
 
 <p>Other dynamic way is this:</p>
-<pre> var matches = "vindecode";
+
+```JavaScript
+ var matches = "vindecode";
  var somethingMatches = new RegExp(matches); // creates a new instance of RegExp
  var yourText = "he is vinddd";
  var result = somethingMatches.test(yourText);
@@ -227,9 +229,12 @@ var name = 'vindecode';
  console.log(result2);
  output:
  true
- </pre>
+```
+
 <p>For keys insensitive you just need to add i</p>
-<pre> var matches = /decode/;
+
+```JavaScript
+ var matches = /decode/;
  var yourText = "His name is VinDECODE";
  var result = matches.test(yourText);
  console.log(result);
@@ -248,7 +253,8 @@ var name = 'vindecode';
  console.log(result);
  output:
  true
- </pre>
+```
+
 </div>
 <div>
 <div>April 20, 2019
@@ -270,7 +276,9 @@ var name = 'vindecode';
 <p><strong>Compiler</strong> converts the code into another code that the machine can understand</p>
 <p><strong>Interpreter</strong> is fast because it will not consume time to convert the code and sends directly to the cpu.</p>
 <p><strong>Compiler</strong> is also fast because it enhanced the code into a better one</p>
-<pre>// if using a compiler this code will be simplified
+
+```JavaScript
+// if using a compiler this code will be simplified
  // JS CODE
  function sum(){
  for (var i = 0; i &lt; 10; i ++){
@@ -283,14 +291,17 @@ var name = 'vindecode';
  return 15;
  }
  // this is how compiler works
- </pre>
+```
+
 <p><strong>Google</strong> decides to combine them and that is <strong>v8</strong> engine and the name of the compiler inside the <strong>v8</strong> is <strong>JIT Compiler</strong> or <strong>Just In Time Compiler</strong></p>
 <p>How <strong>v8</strong> works: first it reads the code line by line which is the job of an <strong>interpreter</strong> and their is a <strong>profiler</strong> that checks if their are repeating codes, if their is then it will be passed to a <strong>compiler</strong>.</p>
 <br /><br /><br />
 <p><strong>Call Stack</strong> and <strong>Memory Heap</strong></p>
 <p><strong>Call Stack</strong> is the memory of each function or variables will be stored its logic is First In Last Out (FILO)</p>
 <p>Example</p>
-<pre> function a(num){
+
+```JavaScript
+ function a(num){
  return num * num;
  }
  function b(num){
@@ -301,28 +312,38 @@ var name = 'vindecode';
  output:
  27
  // uncomment the debugger and go to mozilla or chrome debuger.
- </pre>
+```
+
 <p>You will see a <strong>Call Stack </strong>at the right pane and you can see the the function b was taken</p>
 <p>and pressing the next step or step in for firefox you can see that each line was read and when it reads the function a we can see the a is added at the call stack but after it runs to that function it will be removed at the call stack, remember the FILO just play with it to understand more.</p>
 <p><strong>Stack Overflow</strong> when calling a function by it self it will run out of memory because calling it self will loop and cause damage</p>
-<pre> function a(){
+
+```JavaScript
+ function a(){
  return a();
  }
- </pre>
+```
+
 <p><strong>Memory Heap</strong> is the memory of each values will be stored</p>
 <p><strong>Memory Leak</strong> this will happen when cpu dont have space to put other values example</p>
-<pre> var a = [];
+
+```JavaScript
+ var a = [];
  for (i = 10; i &gt; 1; i++){
  a[i] = i;
  }
- </pre>
+```
+
 <p>To avoid memory leaks</p>
 <ul>
 <li>Avoid Global variables</li>
 <li>Adding EventListener because your decalring variable to an element and decalring EventListener again:
-<pre> var element = document.getElementById('element');
+
+```JavaScript 
+ var element = document.getElementById('element');
  element.addEventListener('click', myfunction);
- </pre>
+```
+
 </li>
 <li>using setInterval function must be stop if not using</li>
 </ul>
