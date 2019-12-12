@@ -12,7 +12,7 @@
  you can use it for variables something like this
  
  var grade = 60;
- var isFail = grade &lt; 75 ? 'fail' : 'Passed';
+ var isFail = grade <; 75 ? 'fail' : 'Passed';
  console.log(isFail);
  output:
  fail
@@ -54,13 +54,13 @@
  console.log('a' >; 'A');
  output:
  true
- console.log('a' &lt; 'A');
+ console.log('a' <; 'A');
  output:
  false
  console.log('a' >; '@' &amp;&amp; 'A' >; '@');
  output:
  true
- console.log('a' &lt; '@' &amp;&amp; 'A' &lt; '@');
+ console.log('a' <; '@' &amp;&amp; 'A' <; '@');
  output:
  false
 ```
@@ -92,7 +92,7 @@
 ```JavaScript
  let result = 1;
  let counter = 0;
- while (counter &lt; 10) {
+ while (counter <; 10) {
  result = result * 2;
  counter = counter + 1;
  }
@@ -282,7 +282,7 @@
 // if using a compiler this code will be simplified
  // JS CODE
  function sum(){
- for (var i = 0; i &lt; 10; i ++){
+ for (var i = 0; i <; 10; i ++){
  return 5+10;
  }
  }
@@ -525,7 +525,7 @@
  function alphabet(...letters){
  var l = Array.from(letters);
  var n = l.length;
- for (var i = 0; i &lt; n; i++){
+ for (var i = 0; i <; n; i++){
  console.log(`This is letter : ${l[i]}`);
  }
  }
@@ -610,7 +610,7 @@
 <p>Most of the programming language are Block Scope but javascript isn't</p>
 
 ```JavaScript
- if( 5 &lt; 10){ //this is already a block scope but javascript can still able to console the var number
+ if( 5 <; 10){ //this is already a block scope but javascript can still able to console the var number
  var number = 100;
  }
  console.log(number)
@@ -621,13 +621,13 @@
 <p>To allow javascript Block Scoping we can use let and const declarations</p>
 
 ```JavaScript
- if(5 &lt; 10){
+ if(5 <; 10){
  const number = 100;
  }
  console.log(number);
  output:
  error
- if(5 &lt; 10){
+ if(5 <; 10){
  let number = 100;
  }
  console.log(number);
@@ -1213,7 +1213,7 @@
 ```JavaScript
  //here is the problem
  const array = [1,2,3,4]
- for(var i=0; i &lt; array.length; i++){
+ for(var i=0; i <; array.length; i++){
  setTimeout(function(){console.log('Im at index ' + [i])}, 4000);
  }
  output:
@@ -1224,7 +1224,7 @@
  // this is not what we want to appear.
  // solution 1
  const array = [1,2,3,4]
- for(let i=0; i &lt; array.length; i++){ //changing var to let because let is block scope.
+ for(let i=0; i <; array.length; i++){ //changing var to let because let is block scope.
  setTimeout(function(){console.log('Im at index ' + [i])}, 4000);
  }
  output:
@@ -1235,7 +1235,7 @@
  //solution 2 without using the let, we will use IIFE
  // were also doing closure here
  const array = [1,2,3,4]
- for(let i=0; i &lt; array.length; i++){ //changing var to let because let is block scope.
+ for(let i=0; i < array.length; i++){ //changing var to let because let is block scope.
  (function(indexI){
  setTimeout(function(){console.log('Im at index ' + [indexI])}, 4000);
  })(i);
@@ -1357,7 +1357,7 @@
  //modify .map to print "V" at the end of each item
  Array.prototype.map = function(){
  let arr = [];
- for (let i =0; i &lt; this.length; i++){
+ for (let i =0; i < this.length; i++){
  arr.push((this[i] + "V"));
  }
  return arr;
@@ -1732,7 +1732,7 @@
 
 ```JavaScript
  // dont be confused by this
- for( let i= 0; i &lt; 1000; i++){ //this is Imperative
+ for( let i= 0; i < 1000; i++){ //this is Imperative
  console.log(i)
  }
  [1,2,3].forEach(item =>; console.log(item)); //this is declarative
