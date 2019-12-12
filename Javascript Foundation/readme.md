@@ -19,6 +19,7 @@
 ```
 
 <p>Another ideas</p>
+
 ```JavaScript
  console.log(true &amp;&amp; false);
  output
@@ -40,7 +41,7 @@
 <p>Other ways to console a value</p>
 
 ```JavaScript
-var name = 'vindecode';
+ var name = 'vindecode';
  var age = 22;
  console.log('Hi im %s and I am %s year\'s old', name, age);
  output:
