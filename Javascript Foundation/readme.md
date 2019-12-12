@@ -204,13 +204,16 @@ var name = 'vindecode';
 </div>
 <p><strong>Regular Expression Continued</strong></p>
 <p>Checking a string if it contains specific words using the test method</p>
-<pre> var matches = /decode/;
+
+```JavaScript
+ var matches = /decode/;
  var yourText = "His name is Vindecode";
  var result = matches.test(yourText); // test method only returns true or false
  console.log(result);
  output:
  true
- </pre>
+```
+
 <p>Other dynamic way is this:</p>
 <pre> var matches = "vindecode";
  var somethingMatches = new RegExp(matches); // creates a new instance of RegExp
