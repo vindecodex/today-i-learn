@@ -4,7 +4,7 @@
 
 ```JavaScript
  var a = 100;
- console.log(a >; 70 ? 'yes' : 'no');
+ console.log(a > 70 ? 'yes' : 'no');
  output:
  yes
  
@@ -21,10 +21,10 @@
 <p>Another ideas</p>
 
 ```JavaScript
- console.log(true &amp;&amp; false);
+ console.log(true && false);
  output
  false
- console.log(true &amp;&amp; true);
+ console.log(true && true);
  output
  true
  console.log(true || true);
@@ -51,16 +51,16 @@
 <p>Small letters is always greater than Capital letters and all letters are greater than special characters</p>
 
 ```JavaScript
- console.log('a' >; 'A');
+ console.log('a' > 'A');
  output:
  true
  console.log('a' < 'A');
  output:
  false
- console.log('a' >; '@' &amp;&amp; 'A' >; '@');
+ console.log('a' > '@' && 'A' > '@');
  output:
  true
- console.log('a' < '@' &amp;&amp; 'A' < '@');
+ console.log('a' < '@' && 'A' < '@');
  output:
  false
 ```
@@ -330,7 +330,7 @@
 
 ```JavaScript
  var a = [];
- for (i = 10; i >; 1; i++){
+ for (i = 10; i > 1; i++){
  a[i] = i;
  }
 ```
@@ -387,7 +387,7 @@
 
 ```JavaScript
  console.log('1');
- setTimeout(() =>; {console.log('2'),1000}); //this is a WEB API
+ setTimeout(() => {console.log('2'),1000}); //this is a WEB API
  console.log('3');
  output:
  1
@@ -478,7 +478,7 @@
  return 'abc';
  }
  // Other ways for function expression
- var a = () =>; {
+ var a = () => {
  return 'abc';
  }
  // this is a function declaration
@@ -583,7 +583,7 @@
  }
  }
  }
- // this will be the chain global() ->; a() ->; b() ->; c()
+ // this will be the chain global() -> a() -> b() -> c()
 ```
 
 <p>Another thing during the execution context we also have a <strong>lexical variables</strong> in which javascript will create a scope of each variable in which where will be the variables can be used/ or who can access variables</p>
@@ -718,7 +718,7 @@
  name: 'Vindecode',
  winner : function(){
  console.log('a', this);
- var anotherFunc = () =>; { // by using this it lexically bind this, it checks what objects soround this
+ var anotherFunc = () => { // by using this it lexically bind this, it checks what objects soround this
  console.log('b' , this);
  }
  anotherFunc();
@@ -1159,14 +1159,14 @@
  let father = "father"
  return function c(){ //before running this function b() will be pop out to the call stack
  let son = "son"
- return `${grandpa} >; ${father} >; ${son}` //because of referencing the datas of function a() and b() , the datas will be stored on closures even though function a() and b() were already pop out to the stack.
+ return `${grandpa} > ${father} > ${son}` //because of referencing the datas of function a() and b() , the datas will be stored on closures even though function a() and b() were already pop out to the stack.
  }
  }
  }
  a()()();
  // on the debugger just press step in to run the code line by line.
  output:
- "grandpa >; father >; son"
+ "grandpa > father > son"
 ```
 
 <p><strong>2 Main benefits of Closures</strong></p>
@@ -1554,7 +1554,7 @@
  name: 'vindecode',
  age: 55,
  hi : function() {
- var inner = () =>; {
+ var inner = () => {
  return this.name;
  }
  return inner()
@@ -1616,7 +1616,7 @@
 <p>Pure Functions:</p>
 <ul>
 <li>No side effects</li>
-<li>input -->; output same</li>
+<li>input --> output same</li>
 </ul>
 
 ```JavaScript
@@ -1649,7 +1649,7 @@
  //another no side effects
  const array = [1,2,3]
  function multiplyByTen(arr){
- return arr.map(item =>; item * 10)
+ return arr.map(item => item * 10)
  }
  console.log(multiplyByTen(array))
  console.log(array)
@@ -1673,14 +1673,14 @@
  14
  14
  //and both of this are not having any side affects to the outside world because they only modifying their parameters <br />and parameters are local variables
- //the idea also of input -->; output is that even how many times we run the function the output will always be the same nothing will change.
+ //the idea also of input --> output is that even how many times we run the function the output will always be the same nothing will change.
 ```
 
 ```JavaScript
  //another idea on loop
  const array = ["A","B","C","D"];
  function myArray(arr){
- arr.forEach(item =>; {
+ arr.forEach(item => {
  console.log(item)
  })
  }
@@ -1695,7 +1695,7 @@
 ```JavaScript
  //another idea about array
  function greaterThanTen(array){
- return array.map(item =>; item >; 10 ? true : false)
+ return array.map(item => item > 10 ? true : false)
  }
  greaterThanTen([1,2,3,4,5,6,7,8,9,10,11])
  output:
@@ -1735,7 +1735,7 @@
  for( let i= 0; i < 1000; i++){ //this is Imperative
  console.log(i)
  }
- [1,2,3].forEach(item =>; console.log(item)); //this is declarative
+ [1,2,3].forEach(item => console.log(item)); //this is declarative
 ```
 
 <p>Declarative code is better, but we cannot avoid having Imperative code.</p>
@@ -1763,7 +1763,7 @@
 <p><strong>Currying</strong> is taking a parameter of a function one at a time</p>
 
 ```JavaScript
- const multiply = (a) =>; (b) =>; a*b;
+ const multiply = (a) => (b) => a*b;
  const multiplyByTen = multiply(10);
  multiplyByTen(5);
  output:
@@ -1773,7 +1773,7 @@
 <p><strong>Partial Application</strong></p>
 
 ```JavaScript
- const multiply = (a,b,c) =>; a*b*c
+ const multiply = (a,b,c) => a*b*c
  const multiplyByFive = multiply.bind(null,5); //null because we do not have this here but we gave argument 5 to parameter a
  multiplyByFive(10,4) //which is the b and c parameters
  output:
@@ -1845,15 +1845,15 @@
 
 <br /><hr />
 <p><strong>Compose</strong> is something like a data processed by a function and output with a data and processed by a function again and so on and so fort</p>
-<p>data -->; fn -->; data -->; fn -->; data</p>
+<p>data --> fn --> data --> fn --> data</p>
 
 ```JavaScript
  // accepts a negative number
  //multiply it by 3
  //convert to positive number
- const compose = (f,g) =>; (data) =>; f(g(data))
- const multiplyBy3 = (num) =>; num*3;
- const makePositive = (num) =>; Math.abs(num);
+ const compose = (f,g) => (data) => f(g(data))
+ const multiplyBy3 = (num) => num*3;
+ const makePositive = (num) => Math.abs(num);
  const multiplyBy3AndAbsolute = compose(multiplyBy3,makePositive); //param f and g
  multiplyBy3AndAbsolute(-50); //param of data
  output:
@@ -1862,8 +1862,8 @@
 
 <p>Compose is a very strong technique in functional programming so please practice this technique try to do something more.</p>
 <p>Other than compose we also have a <strong>Pipe</strong> the only difference about this is that Pipe do the reverse thing example</p>
-<p>Compose : a() ->; b() ->; c()</p>
-<p>Pipe : c() ->; b() ->; a()</p>
+<p>Compose : a() -> b() -> c()</p>
+<p>Pipe : c() -> b() -> a()</p>
 <hr />
 <p><strong>Aritiy</strong> is the number of parameter of a function</p>
 
@@ -1887,13 +1887,13 @@
  //Implement a cart feature:
  //1. Add Items to cart.
  //2. Add 3% tax to item in cart
- //3. Buy item: cart -->; purhaces
+ //3. Buy item: cart --> purhaces
  //4. Empty Cart
  //Bonus
  // Allow Refunds
  // Track user or user log
  //this solution applies pure functions, Compose
- const compose = (f,g) =>; (...args) =>; f(g(...args));
+ const compose = (f,g) => (...args) => f(g(...args));
  purchaseItem(
  emptyCart,
  buyItem,
@@ -1911,7 +1911,7 @@
  function applyTaxToItems(user){
  const {cart} = user;
  const taxRate = 1.3;
- const updatedCart = cart.map(item =>; {
+ const updatedCart = cart.map(item => {
  return{
  name: item.name,
  price: item.price * taxRate
@@ -1937,8 +1937,8 @@
 <hr />
 <p>Inheretance focuses on what class it is or what is object what are the properties</p>
 <strong>Poblems may encounter</strong>
-<p>>; Problems with inheretance is that it may cause errors when updating or changing sub class or its super class because it will afect each classes</p>
-<p>>; Hierarchy problem when you start to add some classes example below</p>
+<p>> Problems with inheretance is that it may cause errors when updating or changing sub class or its super class because it will afect each classes</p>
+<p>> Hierarchy problem when you start to add some classes example below</p>
 
 ```JavaScript
 Class a(1,2,3,4)
@@ -1948,7 +1948,7 @@ Class d(1,2,3,4)
 what if we are going to add a new class on b that only needs the value 3
  Class a(1,2,3,4)
  Class b(1,2,3,4)
- Class g(3) ->; it only needs the value of 3 but in reality were giving him 1,2,3,4 because we are inhereting,
+ Class g(3) -> it only needs the value of 3 but in reality were giving him 1,2,3,4 because we are inhereting,
  until the program start updating more and more it will cause a lot of errors,
  then we start to refactor it again until of a sudden we start violating the prenciple of doing dry code or do not repeat yourself.
  this is the most common problem on inheretance
@@ -2018,8 +2018,8 @@ what if we are going to add a new class on b that only needs the value 3
 
 ```JavaScript
  console.log("1");
- setTimeout(()=>;{console.log("2")},0);
- Promise.resolve('3').then((data) =>; console.log(data));
+ setTimeout(()=>{console.log("2")},0);
+ Promise.resolve('3').then((data) => console.log(data));
  console.log("4");
  output:
  1
@@ -2037,7 +2037,7 @@ what if we are going to add a new class on b that only needs the value 3
 
 ```JavaScript
  Instantiating new Promise
- const promise = new Promise((resolve,reject) =>; {
+ const promise = new Promise((resolve,reject) => {
  if(true){
  resolve("It worked");
  }else{
@@ -2045,7 +2045,7 @@ what if we are going to add a new class on b that only needs the value 3
  }
  });
  // invoking the promise
- promise.then(result =>; {console.log(result)});
+ promise.then(result => {console.log(result)});
  // or doing this
  promise.then(console.log)
  output:
@@ -2057,7 +2057,7 @@ what if we are going to add a new class on b that only needs the value 3
 <p>Throwing an error</p>
 
 ```JavaScript
- const promise = new Promise((resolve, reject) =>; {
+ const promise = new Promise((resolve, reject) => {
  if(true){
  resolve('It worked')
  }else{
@@ -2065,12 +2065,12 @@ what if we are going to add a new class on b that only needs the value 3
  }
  })
  promise
- .then(result =>; result + '!')
- .then(result2 =>; {
+ .then(result => result + '!')
+ .then(result2 => {
  throw Error
  console.log(result2)
  })
- .catch(console.log); // you can also do this .catch(() =>; console.log("Error!"))
+ .catch(console.log); // you can also do this .catch(() => console.log("Error!"))
  output:
  Promise { : "pending" }
  function Error()
@@ -2083,20 +2083,20 @@ what if we are going to add a new class on b that only needs the value 3
 <p>Great power about this promises are we can run multiple task at the background.</p>
 
 ```JavaScript
- const promise1 = new Promise((resolve, reject) =>; {
+ const promise1 = new Promise((resolve, reject) => {
  setTimeout(resolve, 100, "hallow")
  })
- const promise2 = new Promise((resolve, reject) =>; {
+ const promise2 = new Promise((resolve, reject) => {
  setTimeout(resolve, 1000, "yeee haa!")
  })
- const promise3 = new Promise((resolve, reject) =>; {
+ const promise3 = new Promise((resolve, reject) => {
  setTimeout(resolve, 3000, "Hoola")
  })
- const promise4 = new Promise((resolve, reject) =>; {
+ const promise4 = new Promise((resolve, reject) => {
  setTimeout(resolve, 5000, "It was me!")
  })
  Promise.all([promise1,promise2,promise3,promise4])
- .then(values =>;{console.log(values)})
+ .then(values =>{console.log(values)})
  output:
  Array(4) [ "hallow", "yeee haa!", "Hoola", "It was me!" ]
 ```
@@ -2110,13 +2110,13 @@ what if we are going to add a new class on b that only needs the value 3
  'https://jsonplaceholder.typicode.com/posts',
  'https://jsonplaceholder.typicode.com/albums'
  ]
- Promise.all(urls.map(url =>; {
- return fetch(url).then(resp =>; resp.json())
- })).then(results =>; {
+ Promise.all(urls.map(url => {
+ return fetch(url).then(resp => resp.json())
+ })).then(results => {
  console.log(results[0])
  console.log(results[1])
  console.log(results[2])
- }).catch(() =>; console.log("miss spelled the url or you do not have an internet"))
+ }).catch(() => console.log("miss spelled the url or you do not have an internet"))
  //You need an internet to make this work
 ```
 
@@ -2133,7 +2133,7 @@ what if we are going to add a new class on b that only needs the value 3
 ```JavaScript
  // using es6 promise
  fetch('https://jsonplaceholder.typicode.com/users')
- .then(resp =>; resp.json())
+ .then(resp => resp.json())
  .then(console.log)
  // using async await es8 promise
  async function fetchUsers(){
@@ -2153,7 +2153,7 @@ what if we are going to add a new class on b that only needs the value 3
  'https://jsonplaceholder.typicode.com/posts',
  'https://jsonplaceholder.typicode.com/albums',
  ]
- Promise.all(urls.map(url =>; fetch(url).then(resp =>; resp.json()))).then(array =>; {
+ Promise.all(urls.map(url => fetch(url).then(resp => resp.json()))).then(array => {
  console.log('users',array[0])
  console.log('posts',array[1])
  console.log('albums',array[2])
@@ -2161,7 +2161,7 @@ what if we are going to add a new class on b that only needs the value 3
  //using async await
  const getData = async function(){
  try{
- const [users,posts,albums] = await Promise.all(urls.map(url =>; fetch(url).then(resp =>; resp.json())))
+ const [users,posts,albums] = await Promise.all(urls.map(url => fetch(url).then(resp => resp.json())))
  console.log('users',users)
  console.log('posts',posts)
  console.log('albums',albums)
@@ -2201,7 +2201,7 @@ what if we are going to add a new class on b that only needs the value 3
  function sum(...args){
  const arr = Array.from(args);
  let s = 0;
- arr.forEach(item =>; {
+ arr.forEach(item => {
  s += item
  })
  return s;
@@ -2236,13 +2236,13 @@ what if we are going to add a new class on b that only needs the value 3
  'https://jsonplaceholder.typicode.com/posts',
  'https://jsonplaceholder.typicode.com/albums',
  ]
- Promise.all(urls.map(url =>; fetch(url).then(resp =>; resp.json()))).then(array =>; {
+ Promise.all(urls.map(url => fetch(url).then(resp => resp.json()))).then(array => {
  throw Error
  console.log('users',array[0])
  console.log('posts',array[1])
  console.log('albums',array[2])
  }).catch('ooops')
- .finally(() =>; console.log('Extra Task Here'));
+ .finally(() => console.log('Extra Task Here'));
 ```
 
 <p>The use of finally is that to run extra functionality no matter what happen even if it throws an error</p>
@@ -2257,12 +2257,12 @@ what if we are going to add a new class on b that only needs the value 3
 </ul>
 
 ```JavaScript
- const promisify = (item,delay) =>;
- new Promise((resolve) =>;
- setTimeout(() =>; resolve(item),delay));
- const a = () =>; promisify('a', 100);
- const b = () =>; promisify('b', 5000);
- const c = () =>; promisify('c', 3000);
+ const promisify = (item,delay) =>
+ new Promise((resolve) =>
+ setTimeout(() => resolve(item),delay));
+ const a = () => promisify('a', 100);
+ const b = () => promisify('b', 5000);
+ const c = () => promisify('c', 3000);
  //parallel
  async function parallel(){
  const promises = [a(),b(),c()];
@@ -2333,7 +2333,7 @@ what if we are going to add a new class on b that only needs the value 3
  var vince = 500;
  var jjj = 400;
  function fight(person1,person2){
- return person1.length >; person2.length ? person1 : person2;
+ return person1.length > person2.length ? person1 : person2;
  }
  // now we can allow which function we want to export
  return {
@@ -2403,14 +2403,14 @@ what if we are going to add a new class on b that only needs the value 3
 
 ```JavaScript
  Promise.resolve('asyncfail')
- .then(response =>; {
+ .then(response => {
  throw new Error('#1 fail')
  return response
  })
- .then(response =>; {
+ .then(response => {
  console.log(response)
  })
- .catch(err =>; {
+ .catch(err => {
  console.log(err)
  })
 ```
