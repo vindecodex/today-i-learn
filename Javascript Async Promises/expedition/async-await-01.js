@@ -6,6 +6,7 @@ async function generator(val) {
      generated++
    }
   // it will took time to return for value if big
+  // we didn't call a new promise here so we need to use Promise.resolve() instead of resolve() directly
    return Promise.resolve(generated)
 }
 async function double(value){
