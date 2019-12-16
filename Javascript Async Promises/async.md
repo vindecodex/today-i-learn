@@ -49,3 +49,28 @@ f()
 // using .then
 printNames().then(val => console.log(val))
 ```
+
+#### Catching the error using async
+
+Method 1
+
+```JavaScript
+async function f() {
+    try {
+        let response = await fetch('https://wrong-url-api')
+        console.log(response)
+    } catch(e) {
+        console.log('error message: ' + e)
+    }
+}
+```
+
+Method 2
+
+```JavaScript
+async function f() {
+    let response = await fetch('https://wrong-url-api')
+    console.log(response)
+}
+f().catch(e => console.log('error message: ' + e))
+```
