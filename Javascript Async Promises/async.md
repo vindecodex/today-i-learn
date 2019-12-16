@@ -23,3 +23,29 @@ async function fn() {
 
 fn().catch(err => console.log(err))
 ```
+
+`await` keyword is similar with `then` method but `await` can only be used inside `async` function
+
+```JavaScript
+function printNames() {
+  // i used o for resolve and x for reject to make it short
+  return new Promise(function(o,x){
+    setTimeout(function(){
+      o({
+        Names: [
+        "John",
+        "Doe"
+      ]})
+    },3000)
+  })
+}
+
+async function f(){
+  // it will wait until printNames gives a value to variable name before it runs the console.log
+  const name = await printNames();
+  console.log(name)
+}
+f()
+// using .then
+printNames().then(val => console.log(val))
+```
