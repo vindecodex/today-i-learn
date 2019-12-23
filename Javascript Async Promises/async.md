@@ -77,6 +77,8 @@ f().catch(e => console.log('error message: ' + e))
 
 #### Async in Parallel
 
+We have two async functions which is `build1` and `build2` below of that are executors of the two async functions. First Executor is non-parallel and the other next were parallels. Just Uncomment the function you want to execute and uncomment the others to see the differences.
+
 ```JavaScript
 /* Async Functions */
 async function build1() {
@@ -132,5 +134,5 @@ async function buildParallel3() {
   const b2 = build2()
   console.log(await b1, await b2)
 }
-buildParallel3()
+//buildParallel3()
 ```
