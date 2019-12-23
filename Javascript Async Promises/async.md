@@ -74,3 +74,63 @@ async function f() {
 }
 f().catch(e => console.log('error message: ' + e))
 ```
+
+#### Async in Parallel
+
+```JavaScript
+/* Async Functions */
+async function build1() {
+  return new Promise(function(o,x){
+    setTimeout(function(){
+      console.log("build1")
+      o("Build on 1")
+    },3000)
+  })
+}
+async function build2() {
+  return new Promise(function(o,x){
+    setTimeout(function(){
+      console.log("build2")
+      o("Build on 1")
+      o("Build on 2")
+    },3000)
+  })
+}
+
+/* Executor */
+
+/* Using non parallel */
+async function build() {
+  const b1 = await build1()
+  const b2 = await build2()
+  console.log(b1,b2)
+}
+//build()
+
+/* Using parallel Method1 */
+async function buildParallel1() {
+  const b1 = build1()
+  const b2 = build2()
+  const B1 = await b1
+  const B2 = await b2
+  console.log(B1,B2)
+}
+//buildParallel1()
+
+/* Method2 */
+async function buildParallel2() {
+  const b1 = build1()
+  const b2 = build2()
+  const[B1, B2] = [await b1, await b2]
+  console.log(b1,b2)
+}
+
+//buildParallel2()
+/* Method3 */
+async function buildParallel3() {
+  const b1 = build1()
+  const b2 = build2()
+  console.log(await b1, await b2)
+}
+buildParallel3()
+```
