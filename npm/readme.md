@@ -25,3 +25,15 @@ or
 ###### Installing Modules only for Development (Not on Production)
 
 `npm i module-name --save-dev`
+
+#### Note
+
+Different between LOCAL vs GLOBAL modules installed.
+
+###### LOCAL
+local installed modules can't be run on terminal but can be run using scripts inside your package.json.
+
+###### GLOBAL
+global installed modules can be run on terminal directly.
+
+#### Versioning
