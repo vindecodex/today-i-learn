@@ -14,3 +14,8 @@ Example project [Node-express-api](https://github.com/vindecodex/node-express-ap
 #### What NodeJS Not Good
 - [ &#x2612; ] CRUD App
 - [ &#x2612; ] Heavy server-side computation
+
+#### Best Pattern
+
+- [ &#x2611; ] MVC
+> In MVC handlers and controllers are the same.
