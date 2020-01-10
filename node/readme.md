@@ -23,6 +23,8 @@ Example project [Node-express-api](https://github.com/vindecodex/node-express-ap
 #### Middlewares
 [Sample Creating Middleware](/node/middleware.js)
 
+Middleware can always be used for checking query params if correct using middleware params
+
 
 #### Mounting Routers
 [Sample Using Mounting Routers](https://github.com/vindecodex/node-express-api/blob/master/routes/person.js)
