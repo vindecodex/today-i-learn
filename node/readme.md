@@ -4,13 +4,13 @@ Example project [Node-express-api](https://github.com/vindecodex/node-express-ap
 
 ##### What NodeJS Can do
 
-- [ x ] Can do Complex Single Page App (SPA's)
-- [ x ] Real Time Apps (RTA)
-- [ x ] Chat rooms
-- [ x ] Browser Games
-- [ x ] Data Streaming Apps
-- [ x ] REST API
+- [ &#x2611; ] Can do Complex Single Page App (SPA's)
+- [ &#x2611; ] Real Time Apps (RTA)
+- [ &#x2611; ] Chat rooms
+- [ &#x2611; ] Browser Games
+- [ &#x2611; ] Data Streaming Apps
+- [ &#x2611; ] REST API
 
 #### What NodeJS Not Good
-- [  ] CRUD App
-- [  ] Heavy server-side computation
+- [ &#x2612; ] CRUD App
+- [ &#x2612; ] Heavy server-side computation
