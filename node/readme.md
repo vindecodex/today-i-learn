@@ -20,6 +20,5 @@ Example project [Node-express-api](https://github.com/vindecodex/node-express-ap
 - [ &#x2611; ] MVC
 > In MVC handlers and controllers are the same.
 
-:qall
 #### Middlewares
 [Sample Creating Middleware](/node/middleware.js)
