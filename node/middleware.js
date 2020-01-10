@@ -10,7 +10,7 @@ const app = new express();
 app.use((req, res, next) => {
   // we can use request and response properties/attributes
   console.log('Hello');
-  // after all next fn must be called so that it wont left hangging the request
+  // after all next fn must be called so that it wont stock after requesting
   next();
 });
 
