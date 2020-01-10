@@ -18,12 +18,41 @@ app.use((req, res, next) => {
 const getData = (req,res) => {
   res.status(200).json({
     data: data
-  })
-}
+  });
+};
 
 // Route
 /*
  * Everytime we request a console.log('Hello will always trigger');
  */
 app.get('/sample', getData);
+
+
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
+/*
+ * Middleware adding custom attribute to request
+ */
+app.use((req, res, next) => {
+  // we are adding custom attribute that we can use on our handlers
+  req.sample = 'Hi'
+  next();
+});
+
+// Handlers
+const getData = (req, res) => {
+  // now we use the created custom properties
+  console.log(req.sample);
+}
+
+app.get('/sample', getData);
+
+
+
+// ------------------------------------------------------------------------------------------------------
 
