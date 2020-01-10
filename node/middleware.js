@@ -56,3 +56,31 @@ app.get('/sample', getData);
 
 // ------------------------------------------------------------------------------------------------------
 
+
+// Best combination router.param and middleware param
+
+
+/*
+ * Perfect use for validation if params is valid
+ */
+
+// Create a router
+const router = express.Router();
+
+// Use router param
+router.param('any-param', yourMiddleware);
+// Routes
+router.get('/sample/:any-param', yourController);
+
+// Middleware
+const yourMiddleware = (req, res, next, val) => {
+  // use val for validation
+}
+
+// Controller
+const yourController = (req, res) => {
+  // Your todo here
+}
+
+
+// ------------------------------------------------------------------------------------------------------
