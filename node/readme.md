@@ -36,3 +36,23 @@ Middleware can always be used for checking query params if correct using middlew
 #### Environment Variables
 [Sample .env file](/node/.env)
 Environment varible keys must be UPPERCASE
+
+Environment variables are GLOBAL variables, it can be accessed anyware within your application.
+
+Set environment variables during running the application.
+
+`PORT=3000 node index.js` - This will create PORT environment variable
+
+Set environment variables inside code
+
+`process.env.YOURKEY=YOURVALUE` - This will create new properties on your process.env
+
+Using .env file require to be read so we need a module that will read the .env file
+
+`npm i dotenv --save`
+
+```JavaScript
+const dotenv = require('dotenv').config({ path: './.env' })
+```
+
+anything that you set from your .env file will be added to `process.env`
