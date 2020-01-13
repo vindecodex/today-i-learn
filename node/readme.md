@@ -25,6 +25,11 @@ Example project [Node-express-api](https://github.com/vindecodex/node-express-ap
 
 Middleware can always be used for checking query params if correct using middleware params
 
+#### Chaining Middlewares
+[Sample Chaining Middlewares](/node/middleware.js)
+
 
 #### Mounting Routers
 [Sample Using Mounting Routers](https://github.com/vindecodex/node-express-api/blob/master/routes/person.js)
+
+
