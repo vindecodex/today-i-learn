@@ -33,3 +33,6 @@ Middleware can always be used for checking query params if correct using middlew
 [Sample Using Mounting Routers](https://github.com/vindecodex/node-express-api/blob/master/routes/person.js)
 
 
+#### Environment Variables
+[Sample .env file](/node/.env)
+Environment varible keys must be UPPERCASE
