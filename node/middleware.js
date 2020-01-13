@@ -84,3 +84,19 @@ const yourController = (req, res) => {
 
 
 // ------------------------------------------------------------------------------------------------------
+
+
+// Chaining Middlewares
+
+
+
+// Middleware
+const middleware = (req, res, next) => {
+  console.log('middleware');
+}
+
+app.get(middleware, yourController);
+
+
+// ------------------------------------------------------------------------------------------------------
+
