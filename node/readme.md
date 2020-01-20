@@ -23,14 +23,14 @@ Example project [Node-express-api](https://github.com/vindecodex/node-express-ap
 #### Middlewares
 [Sample Creating Middleware](/node/middleware.js)
 
-Middleware can always be used for checking query params if correct using middleware params
+Middleware can always be used for checking query params if correct using middleware params or logging some data during request or response
 
 #### Chaining Middlewares
 [Sample Chaining Middlewares](/node/middleware.js)
 
 
 #### Mounting Routers
-[Sample Using Mounting Routers](https://github.com/vindecodex/node-express-api/blob/master/routes/person.js)
+[Sample Using Mounting Routers](https://github.com/vindecodex/node-express-api/blob/master/routes/user.js)
 
 
 #### Environment Variables
@@ -56,3 +56,6 @@ const dotenv = require('dotenv').config({ path: './.env' })
 ```
 
 anything that you set from your .env file will be added to `process.env`
+
+#### Running a function using your terminal
+[Sample Script](/node/run-fn-with-terminal.js)
